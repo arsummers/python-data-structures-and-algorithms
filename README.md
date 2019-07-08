@@ -14,4 +14,4 @@ The challenge was to reverse an array. We had example input and output.
 ##Approach & Efficiency
 I took what I saw at the shortest approach, and sliced the array one step at a time from back to front, so that it will reverse when printed. I may be wrong, but I believe this operates at O(1). 
 ##Solution
-!(/assets/array_reverse.jpg)
+![whiteboarding solution for reverse](./assets/array_reverse.jpg)
