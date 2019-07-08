@@ -2,7 +2,7 @@
     Aliya Summers
 # Table of Contents
     -challenge 01 - reverse array
-        [link to first challenge](./challenges/array_reverse)
+        [link to first challenge](https://github.com/arsummers/python-data-structures-and-algorithms/pull/1)
 
 
 # Reverse an Array
