@@ -1,7 +1,9 @@
-##Author
-
+## Author
+    Aliya Summers
 # Table of Contents
     -challenge 01 - reverse array
+        [link to first challenge](./challenges/array_reverse)
+
 
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
