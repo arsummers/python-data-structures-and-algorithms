@@ -1,8 +1,8 @@
 ## Author
     Aliya Summers
 # Table of Contents
-    challenge 01 - reverse array
-        [first challenge](https://github.com/arsummers/python-data-structures-and-algorithms/pull/1)
+  challenge 01 - reverse array
+  [first challenge](https://github.com/arsummers/python-data-structures-and-algorithms/pull/1)
 
 
 # Reverse an Array
