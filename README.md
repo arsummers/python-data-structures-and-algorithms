@@ -1,8 +1,10 @@
 ## Author
     Aliya Summers
 # Table of Contents
+
    challenge 01 - reverse array
         [link to first challenge](./challenges/array_reverse)
+
 
    challenge 02 - shift an array
         [link to secon challenge](./challenges/array_shift)
@@ -22,6 +24,7 @@ I took what I saw at the shortest approach, and sliced the array one step at a t
 ![whiteboarding solution for reverse](./assets/array_reverse.jpg)
 
 
+
 # Insert and Shift an Array
 The instructions were to write a function that accepts an array/list and a value, and insert that value into the midpoint of the array.
 
@@ -35,3 +38,5 @@ I utilized if/elif statements and integer division to verify my desired input. I
 
 ## Solution
 ![whiteboarding solution for array shift](./assets/array_shift.jpg)
+
+
