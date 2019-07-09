@@ -1,10 +1,10 @@
 ## Author
     Aliya Summers
 # Table of Contents
-    -challenge 01 - reverse array
+   challenge 01 - reverse array
         [link to first challenge](./challenges/array_reverse)
 
-    -challenge 02 - shift an array
+   challenge 02 - shift an array
         [link to secon challenge](./challenges/array_shift)
 
 # Reverse an Array
