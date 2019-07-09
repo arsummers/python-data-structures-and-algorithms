@@ -18,7 +18,3 @@ def test_insert_into_middle_odd():
     actual = insert_shift_array([1, 2, 3, 4, 5], 7)
     assert expected == actual
 
-def test_expected_failure_length_issue():
-    expected = 'This array does not have a midpoint'
-    actual = insert_shift_array([1], 7)
-    assert expected == actual
