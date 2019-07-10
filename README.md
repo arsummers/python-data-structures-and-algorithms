@@ -7,7 +7,10 @@
 
 
    challenge 02 - shift an array
-        [link to secon challenge](./challenges/array_shift)
+        [link to second challenge](./challenges/array_shift)
+
+   challenge 03 - binary search array
+        [link to third challenge](./challenges/array_binary_search)
 
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
@@ -40,3 +43,17 @@ I utilized if/elif statements and integer division to verify my desired input. I
 ![whiteboarding solution for array shift](./assets/array_shift.jpg)
 
 
+# Array Binary Search
+Write a function that finds the given key value in an array by accessing various points in the array until it hits.
+
+
+## Challenge
+Write a function that takes in a list and a value. It should search for the value in the list, and return the index number of that value. If the value does not exist, return -1. Do not use python's built-in functions (like index()) to solve this.
+
+## Approach & Efficiency
+
+My whiteboarding partner for this lab was Tammy Do. We discussed approaches with each other for each of our whiteboarding turns.
+
+After puzzling over this, we consulted the ![wikipedia page](https://en.wikipedia.org/wiki/Binary_search_algorithm) provided in the assignment.
+## Solution
+![whiteboarding solution for array binary search](./assets/array_binary_search.jpg)
