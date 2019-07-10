@@ -14,7 +14,7 @@ def test_even_array_key_not_exists():
     assert expected == actual
 
 def test_odd_array_key_exists():
-    expected = 4
+    expected = 3
     actual = binary_search([8,15,16,23,42], 23)
     assert expected == actual
 

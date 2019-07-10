@@ -1,13 +1,12 @@
 def binary_search(lst, search_key):
-
-    length = len(lst)
+    
     left_end = 0
-    right_end = length - 1
+    right_end = len(lst) - 1
 
     for item in lst:
-        if left_end < right_end:
-            # breakpoint()
-            mid = length // 2
+        if left_end <= right_end:
+
+            mid = (left_end + right_end)// 2
 
             if lst[mid] < search_key:
                 left_end = mid + 1
@@ -17,4 +16,5 @@ def binary_search(lst, search_key):
 
             else:
                 return mid
-        return -1
+        else:
+             return -1
