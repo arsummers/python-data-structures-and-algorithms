@@ -10,7 +10,7 @@ def test_even_array_key_exists():
 
 def test_even_array_key_not_exists():
     expected = -1
-    actual = binary_search([[11,22,33,44,55,66], 90])
+    actual = binary_search([11,22,33,44,55,66], 90)
     assert expected == actual
 
 def test_odd_array_key_exists():
@@ -20,7 +20,7 @@ def test_odd_array_key_exists():
 
 def test_odd_array_key_not_exists():
     expected = -1
-    actual = binary_search([[11,22,33,44,55,66, 100], 90])
+    actual = binary_search([11,22,33,44,55,66, 80], 90)
     assert expected == actual
 
 def test_large_array():
