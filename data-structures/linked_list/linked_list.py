@@ -15,11 +15,10 @@ class LinkedList:
             if current.animal_value == search_value:
                 return True
             
-            current = next
+            current = current.next
 
         return False
-
-    
+   
     def __str__(self):
         animal_str = ''
         current = self.head

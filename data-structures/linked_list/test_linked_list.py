@@ -46,13 +46,18 @@ def test_insert_three_animals():
 
 def test_includes_val_true():
     ll = LinkedList()
-    if ll.includes_val('fox'):
-        return True
+    ll.insert('sealion')
+    ll.insert('black bear')
+    ll.insert('fox')
+    assert ll.includes_val('fox') == True
 
 def test_includes_val_false():
     ll = LinkedList()
-    if ll.includes_val('rhino'):
-        return False
+    ll.insert('sealion')
+    ll.insert('black bear')
+    ll.insert('harp seal')
+
+    assert ll.includes_val('rhino') == False
 
 def test_str():
     ll = LinkedList()
