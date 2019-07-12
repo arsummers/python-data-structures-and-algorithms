@@ -54,12 +54,9 @@ def test_includes_val_false():
     if ll.includes_val('rhino'):
         return False
 
-    
-
-# def test_head_pointed_to_first_node
-
-# The head property will properly point to the first node in the linked list
-    # base list
-
-# Can properly return a collection of all the values that exist in the linked list
-    # __str__
+def test_str():
+    ll = LinkedList()
+    ll.insert('leopard')
+    ll.insert('wolf ')
+    ll.insert('bear ')
+    assert ll.__str__() == 'bear wolf leopard'

@@ -21,20 +21,18 @@ class LinkedList:
 
     
     def __str__(self):
-        'this is a string'
-        # current = self.head
+        animal_str = ''
+        current = self.head
 
-        # while current != None:
-        #     current = next
-        #     return f'{self.head.animal_value} {self.head.next.animal_value}'
- 
-        # __str__(self.head.value)
-    
+        while current != None:
 
+            animal_str += str(current.animal_value)
+            current = current.next
+            
+        return animal_str
 
-    # method called __str__
-        # returns a string representing all the values of the list
-
+ll = LinkedList()
+ll.__str__()
 
 class Node:
     def __init__(self, animal_value, next):
