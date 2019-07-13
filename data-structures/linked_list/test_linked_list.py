@@ -1,6 +1,4 @@
 from linked_list import LinkedList, Node
-# test animals to put into list from:https://en.wikipedia.org/wiki/List_of_carnivorans_by_population
-# https://www.geeksforgeeks.org/search-an-element-in-a-linked-list-iterative-and-recursive/
 
 def does_exist():
     assert LinkedList()

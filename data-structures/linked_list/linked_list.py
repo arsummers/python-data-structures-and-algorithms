@@ -30,10 +30,14 @@ class LinkedList:
             
         return animal_str
 
-ll = LinkedList()
-ll.__str__()
-
 class Node:
     def __init__(self, animal_value, next):
         self.animal_value = animal_value
         self.next = next
+
+try:
+    LinkedList()
+
+except ValueError:
+    print('There has been an error with the value')
+
