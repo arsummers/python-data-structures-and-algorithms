@@ -12,6 +12,9 @@
    challenge 03 - binary search array
         [link to third challenge](./challenges/array_binary_search)
 
+   challenge 05 - singly linked list
+        [link to fourth challenge](./data-structures/linked_list)
+
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
 
@@ -57,3 +60,27 @@ My whiteboarding partner for this lab was Tammy Do. We discussed approaches with
 After puzzling over this, we consulted the ![wikipedia page](https://en.wikipedia.org/wiki/Binary_search_algorithm) provided in the assignment.
 ## Solution
 ![whiteboarding solution for array binary search](./assets/array_binary_search.jpg)
+
+# Singly Linked List
+Create and write some methods for a singly linked list
+
+
+## Challenge
+Create a Node class and a LinkedList class. Write a function that adds values onto nodes in the list, checks to see if other values exists on nodes in the list, and returns the value of the list in string form.
+
+## Approach & Efficiency
+
+I started by writing some of my tests and modeling them after the class demo on linked lists. I wrote tests, built parts of the app to pass the tests, then wrote more tests, et cetera. Found the algorithm for the includes_val function from ![Geeks for Geeks](https://www.geeksforgeeks.org/search-an-element-in-a-linked-list-iterative-and-recursive/). TA Evy also helped me conceptualize it. Joshua Ho helped guide me on the right path with the __str__ function.
+
+I found my list of animals to pull from for my tests ![here](https://en.wikipedia.org/wiki/List_of_carnivorans_by_population)
+
+I am still learning big O notation, but I believe this runs ar O(N)
+
+## API
+
+insert() adds a node with a given value to the beginning of the linked list. It also allows adding multiple nodes at once.
+
+includes_val() checks against a given term, to see if it exists as a value on any node in the linked list. I adapted the name from just being includes(), so as to avoid accidentally invoking python's built-in .includes() method.
+
+__str__() converts the values of the linked list into a readable string, so it can be compared and tested against.
+
