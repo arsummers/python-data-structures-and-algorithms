@@ -63,3 +63,60 @@ def test_str():
     ll.insert('wolf ')
     ll.insert('bear ')
     assert ll.__str__() == 'bear wolf leopard'
+
+# TESTS FOR LL_INSERTIONS
+
+def test_add_single_node_to_end_of_list():
+    ll = LinkedList()
+    ll.insert('pig')
+    ll.append_val('sheep')
+    assert ll.head.animal_value == 'pig'
+    assert ll.head.next.animal_value == 'sheep'
+
+def test_add_multiple_nodes_to_end_of_list():
+    ll = LinkedList()
+    ll.insert('sheep')
+    ll.insert('pig')
+    ll.append_val('cow')
+    assert ll.head.animal_value == 'pig'
+    assert ll.head.next.animal_value == 'sheep'
+    assert ll.head.next.next.animal_value == 'cow'
+
+
+def test_insert_before_middle():
+    ll = LinkedList()
+    ll.insert('sheep')
+    ll.insert('pig')
+    ll.insert_before('sheep', 'cow')
+    assert ll.head.animal_value == 'pig'
+    assert ll.head.next.animal_value == 'cow'
+    assert ll.head.next.next.animal_value == 'sheep'
+    
+def test_insert_before_first_node():
+    ll = LinkedList()
+    ll.insert('pig')
+    ll.insert('sheep')
+    ll.insert_before('sheep', 'cow')
+    assert ll.head.animal_value == 'cow'
+    assert ll.head.next.animal_value == 'sheep'
+    assert ll.head.next.next.animal_value == 'pig'
+
+# Can successfully insert after a node in the middle of the linked list
+def test_insert_after_middle():
+    ll = LinkedList()
+    ll.insert('pig')
+    ll.insert('sheep')
+    ll.insert_after('sheep', 'cow')
+    assert ll.head.animal_value == 'sheep'
+    assert ll.head.next.animal_value == 'cow'
+    assert ll.head.next.next.animal_value == 'pig'
+
+# Can successfully insert a node after the last node of the linked list
+def test_insert_after_last_node():
+    ll = LinkedList()
+    ll.insert('pig')
+    ll.insert('sheep')
+    ll.insert_after('pig', 'cow')
+    assert ll.head.animal_value == 'sheep'
+    assert ll.head.next.animal_value == 'pig'
+    assert ll.head.next.next.animal_value == 'cow'

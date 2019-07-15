@@ -7,6 +7,7 @@ class LinkedList:
     def insert(self, animal_value):
         self.head = Node(animal_value, self.head)
 
+    
 
     def includes_val(self, search_value):
 
