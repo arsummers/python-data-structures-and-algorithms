@@ -7,7 +7,32 @@ class LinkedList:
     def insert(self, animal_value):
         self.head = Node(animal_value, self.head)
 
+    # def append_val(self, animal_value):
+    #     # self.head.next = Node(animal_value, self.head.next)
+    #     current = self.head
+    #     if current != None:
+    #         current = current.next
+    #     current = Node(animal_value, current.next)
+
     
+    # def insert_before(self, exist_val, animal_value):
+    #     current = self.head
+
+
+        # current = self.head
+        # while current.animal_value != exist_val:
+        #     current = current.next
+        # exist_val.next = Node(animal_value, self.head.next)
+    
+    def insert_after(self, targeted_node, animal_value):
+ 
+        new_node = Node(animal_value, targeted_node)
+        # try:
+        new_node.next = targeted_node.next
+        # except:
+        #         breakpoint()
+        targeted_node.next = new_node
+
 
     def includes_val(self, search_value):
 
@@ -32,7 +57,7 @@ class LinkedList:
         return animal_str
 
 class Node:
-    def __init__(self, animal_value, next):
+    def __init__(self, animal_value, next=None):
         self.animal_value = animal_value
         self.next = next
 
