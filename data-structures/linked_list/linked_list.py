@@ -4,11 +4,11 @@ class LinkedList:
         self.head = None
 
 
-    def insert(self, animal_value):
-        self.head = Node(animal_value, self.head)
+    def insert(self, node_value):
+        self.head = Node(node_value, self.head)
 
-    def append_val(self, animal_value):
-        new_node = Node(animal_value)
+    def append_val(self, node_value):
+        new_node = Node(node_value)
 
         if self.head is None:
             self.head = new_node
@@ -20,36 +20,80 @@ class LinkedList:
         end_point.next = new_node
 
     
-    def insert_before(self, targeted_value, animal_value):
-        new_node = Node(animal_value)
+    def insert_before(self, targeted_value, node_value):
+        new_node = Node(node_value)
         
         if self.head is None:
             self.head = new_node
             return
 
         current = self.head
-        if current.next.animal_value == targeted_value:
-            current = Node(animal_value, current.next)
+        if current.next.node_value == targeted_value:
+            current = Node(node_value, current.next)
            
     
-    def insert_after(self, targeted_value, animal_value):
-        new_node = Node(animal_value)
+    def insert_after(self, targeted_value, node_value):
+        new_node = Node(node_value)
         if self.head is None:
             self.head = new_node
             return
 
         current = self.head
 
-        if current.animal_value == targeted_value:
+        if current.node_value == targeted_value:
             current = new_node
-            current.next = Node(animal_value, current.next)
+            current.next = Node(node_value, current.next)
+
+    def kth_from_end(self, k):
+
+        basic_counter = 0
+        length = 0
+        current = self.head
+
+        while current.next:
+            length += 1
+            current = current.next
+        
+        if k > length:
+            return 'This value is beyond the scope of the list'
+        elif length >= 1:
+            k_endpoint = ((length + 1) - k)
+        elif length <= 1:
+            k_endpoint = (length - k)
+
+        while basic_counter != k_endpoint:
+            current = self.head
+            basic_counter += 1
+            current = current.next
+    
+        # tests for k is at the end of a list with length > 1
+        if length > 1 and k < 1:
+            return current.next.next.node_value
+
+        # tests for k being the same range as the length - means that the targeted node will always be the head value
+        elif k == length:
+            return self.head.node_value
+
+        # tests for basic happy case
+        elif k >= 1:
+            return current.next.node_value 
+        
+        # tests for k is list length == 1
+        elif k < 1 and length <= 1:
+            return self.head.node_value
+        
+
+        
+
+
+
 
 
 
     def includes_val(self, search_value):
         current = self.head
         while current != None:
-            if current.animal_value == search_value:
+            if current.node_value == search_value:
                 return True
             
             current = current.next
@@ -57,19 +101,19 @@ class LinkedList:
         return False
    
     def __str__(self):
-        animal_str = ''
+        node_str = ''
         current = self.head
 
         while current != None:
 
-            animal_str += str(current.animal_value)
+            node_str += str(current.node_value)
             current = current.next
             
-        return animal_str
+        return node_str
 
 class Node:
-    def __init__(self, animal_value, next=None):
-        self.animal_value = animal_value
+    def __init__(self, node_value, next=None):
+        self.node_value = node_value
         self.next = next
 
 try:

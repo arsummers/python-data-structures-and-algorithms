@@ -13,10 +13,13 @@
         [link to third challenge](./challenges/array_binary_search)
 
    challenge 05 - singly linked list
-        [link to fourth challenge](./data-structures/linked_list)
+        [link to fifth challenge](./data-structures/linked_list)
 
-   challenge 06 - linked list insertionss
-        [link to fourth challenge](./data-structures/linked_list)
+   challenge 06 - linked list insertions
+        [link to sixth challenge](./data-structures/linked_list)
+
+   challenge 07 - linked list kth value from end
+        [link to seventh challenge](./data-structures/linked_list)
 
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
@@ -103,3 +106,19 @@ I worked off my previously written insert function to start building my lists to
 ## Solution
 
 ![whiteboarding solution for reverse](./assets/ll_insertions.jpg)
+
+# Linked List - Kth from end
+A method that returns the value of a node a given number of spaces from the end of a linked list
+
+
+## Challenge
+Create a method for the linked list that takes in a number, k, and finds the value of the node that is that many from the end. As an example, 0 from the end would just be the end of the list.
+
+## Approach & Efficiency
+
+Worked off of previously written linked list code. Started with some counters and two while loops. The first while loop calculated the length of the entire linked list. The second while loop used the values from the first to calculate where to end the loop and return the correct value. Whiteboarding sample does not include edge cases.
+
+
+## Solution
+
+![whiteboarding solution for reverse](./assets/ll_kth_from_end.jpg)
