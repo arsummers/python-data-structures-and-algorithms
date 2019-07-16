@@ -173,7 +173,7 @@ def test_k_not_positive():
     assert ll.kth_from_end(0) == 'd'
 
 # Where the linked list is of a size 1
-@pytest.mark.skip('NEED HELP - while loop issues')
+
 def test_length_size_one():
     ll = LinkedList()
     ll.insert('a')

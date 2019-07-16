@@ -47,21 +47,24 @@ class LinkedList:
     def kth_from_end(self, k):
 
         basic_counter = 0
-        length = 1
+        length = 0
         current = self.head
 
         while current.next:
             length += 1
             current = current.next
         
-        k_endpoint = (length - k)
+        k_endpoint = ((length + 1) - k)
 
         while basic_counter != k_endpoint:
             current = self.head
             basic_counter += 1
             current = current.next
     
-        return current.next.node_value
+        if k >= 1:
+            return current.next.node_value
+        elif k < 1:
+            return self.head.node_value
 
 
 
