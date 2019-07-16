@@ -54,17 +54,38 @@ class LinkedList:
             length += 1
             current = current.next
         
-        k_endpoint = ((length + 1) - k)
+        if k > length:
+            return 'This value is beyond the scope of the list'
+        elif length >= 1:
+            k_endpoint = ((length + 1) - k)
+        elif length <= 1:
+            k_endpoint = (length - k)
 
         while basic_counter != k_endpoint:
             current = self.head
             basic_counter += 1
             current = current.next
     
-        if k >= 1:
-            return current.next.node_value
-        elif k < 1:
+        # tests for k is at the end of a list with length > 1
+        if length > 1 and k < 1:
+            return current.next.next.node_value
+
+        # tests for k being the same range as the length - means that the targeted node will always be the head value
+        elif k == length:
             return self.head.node_value
+
+        # tests for basic happy case
+        elif k >= 1:
+            return current.next.node_value 
+        
+        # tests for k is list length == 1
+        elif k < 1 and length <= 1:
+            return self.head.node_value
+        
+
+        
+
+
 
 
 

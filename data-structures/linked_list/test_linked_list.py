@@ -135,21 +135,19 @@ def test_insert_after_last_node():
 # TESTS FOR Kth FROM END
 
 # Where k is greater than the length of the linked list
-@pytest.mark.skip('NEED HELP - while loop issues')
 def test_k_greater_than_list_length():
     ll = LinkedList()
     ll.insert('d')
     ll.insert('c')
     ll.insert('b')
     ll.insert('a')
-    # k = 5
+ 
     assert ll.head.node_value == 'a'
     assert ll.head.next.next.next.node_value == 'd'
-    assert ll.kth_from_end(6) == ValueError
+    assert ll.kth_from_end(6) == 'This value is beyond the scope of the list'
 
 
 # Where k and the length of the list are the same
-@pytest.mark.skip('NEED HELP - while loop issues')
 def test_k_same_as_length():
     ll = LinkedList()
     ll.insert('d')
@@ -161,7 +159,6 @@ def test_k_same_as_length():
     assert ll.kth_from_end(3) == 'a'
 
 # Where k is not a positive integer
-@pytest.mark.skip('NEED HELP - while loop issues')
 def test_k_not_positive():
     ll = LinkedList()
     ll.insert('d')
@@ -173,7 +170,6 @@ def test_k_not_positive():
     assert ll.kth_from_end(0) == 'd'
 
 # Where the linked list is of a size 1
-
 def test_length_size_one():
     ll = LinkedList()
     ll.insert('a')
@@ -182,7 +178,6 @@ def test_length_size_one():
     assert ll.kth_from_end(0) == 'a'
 
 # “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
-
 def test_k_in_middle():
     ll = LinkedList()
     ll.insert('d')
