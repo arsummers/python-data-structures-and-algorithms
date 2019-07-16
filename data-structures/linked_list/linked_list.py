@@ -7,35 +7,31 @@ class LinkedList:
     def insert(self, animal_value):
         self.head = Node(animal_value, self.head)
 
-    # def append_val(self, animal_value):
-    #     # self.head.next = Node(animal_value, self.head.next)
-    #     current = self.head
-    #     if current != None:
-    #         current = current.next
-    #     current = Node(animal_value, current.next)
+    def append_val(self, animal_value):
+        new_node = Node(animal_value)
+
+        if self.head is None:
+            self.head = new_node
+            return
+        
+        end_point = self.head
+        while (end_point.next):
+            end_point = end_point.next
+        end_point.next = new_node
 
     
-    # def insert_before(self, exist_val, animal_value):
-    #     current = self.head
+    # def insert_before(self, targeted_node, animal_value):
+    #     new_node = Node(animal_value, targeted_node)
 
-
-        # current = self.head
-        # while current.animal_value != exist_val:
-        #     current = current.next
-        # exist_val.next = Node(animal_value, self.head.next)
     
     def insert_after(self, targeted_node, animal_value):
- 
+# https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
         new_node = Node(animal_value, targeted_node)
-        # try:
         new_node.next = targeted_node.next
-        # except:
-        #         breakpoint()
         targeted_node.next = new_node
 
 
     def includes_val(self, search_value):
-
         current = self.head
         while current != None:
             if current.animal_value == search_value:
