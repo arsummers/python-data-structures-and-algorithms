@@ -45,7 +45,25 @@ class LinkedList:
             current.next = Node(node_value, current.next)
 
     def kth_from_end(self, k):
-        # basic_counter = 0
+
+        basic_counter = 0
+        length = 1
+        current = self.head
+
+        while current.next:
+            length += 1
+            current = current.next
+        
+        k_endpoint = (length - k)
+
+        while basic_counter != k_endpoint:
+            current = self.head
+            basic_counter += 1
+            current = current.next
+    
+        return current.next.node_value
+
+
 
 
     def includes_val(self, search_value):
