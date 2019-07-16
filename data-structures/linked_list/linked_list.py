@@ -20,15 +20,30 @@ class LinkedList:
         end_point.next = new_node
 
     
-    # def insert_before(self, targeted_node, animal_value):
-    #     new_node = Node(animal_value, targeted_node)
+    def insert_before(self, targeted_value, animal_value):
+        new_node = Node(animal_value)
+        
+        if self.head is None:
+            self.head = new_node
+            return
 
+        current = self.head
+        if current.next.animal_value == targeted_value:
+            current = Node(animal_value, current.next)
+           
     
-    def insert_after(self, targeted_node, animal_value):
-# https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
-        new_node = Node(animal_value, targeted_node)
-        new_node.next = targeted_node.next
-        targeted_node.next = new_node
+    def insert_after(self, targeted_value, animal_value):
+        new_node = Node(animal_value)
+        if self.head is None:
+            self.head = new_node
+            return
+
+        current = self.head
+
+        if current.animal_value == targeted_value:
+            current = new_node
+            current.next = Node(animal_value, current.next)
+
 
 
     def includes_val(self, search_value):
