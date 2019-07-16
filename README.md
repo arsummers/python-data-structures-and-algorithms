@@ -15,6 +15,9 @@
    challenge 05 - singly linked list
         [link to fourth challenge](./data-structures/linked_list)
 
+   challenge 06 - linked list insertionss
+        [link to fourth challenge](./data-structures/linked_list)
+
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
 
@@ -85,3 +88,18 @@ includes_val() checks against a given term, to see if it exists as a value on an
 __str__() converts the values of the linked list into a readable string, so it can be compared and tested against.
 
 
+# Linked List - Insertion Methods
+Create and write some methods to insert values are various places in a singly linked list
+
+
+## Challenge
+Create a Node class and a LinkedList class. Write functions that add values to the end of the list, before and after a given point in the middle of the list, and into an empty list
+
+## Approach & Efficiency
+
+I worked off my previously written insert function to start building my lists to work with. My append function is working well. I tried a few different ways to write the functions that access a value, and add a node either before or after the given value, but no luck yet. I sought assistance from James my TA, and JB, my instructor, as well as this ![Geeks for Geeks](https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/) page.
+
+
+## Solution
+
+![whiteboarding solution for reverse](./assets/ll_insertions.jpg)
