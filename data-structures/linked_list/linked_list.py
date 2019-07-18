@@ -83,9 +83,25 @@ class LinkedList:
             return self.head.node_value
         
 
-        
+    def merge_lists(self, ll_1):
+        current_1 = self.head
+        current_2 = ll_1.head
 
 
+        while current_1 != None and current_2 != None:
+            # saves referecnces
+            current_1_next = current_1.next
+            current_2_next = current_2.next
+
+            # switches pointer
+            current_2.next = current_1_next,
+            current_1_next = current_2_next
+            
+            current_1 = current_1_next
+            current_2 = current_2_next
+
+        ll_1.head = current_1
+        return ll_1.head.node_value
 
 
 
