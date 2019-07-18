@@ -23,6 +23,8 @@
 
    challenge 08 - linked list - merge/zip list
         [link to seventh challenge](./data-structures/linked_list)
+
+   challenge 10 - stacks and queues
      
 
 # Reverse an Array
