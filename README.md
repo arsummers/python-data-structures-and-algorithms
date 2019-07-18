@@ -21,6 +21,10 @@
    challenge 07 - linked list kth value from end
         [link to seventh challenge](./data-structures/linked_list)
 
+   challenge 08 - linked list - merge/zip list
+        [link to seventh challenge](./data-structures/linked_list)
+     
+
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
 
@@ -122,3 +126,21 @@ Worked off of previously written linked list code. Started with some counters an
 ## Solution
 
 ![whiteboarding solution for reverse](./assets/ll_kth_from_end.jpg)
+
+# Linked List - Merged List
+A method that takes two linked lists and merges them together, returning the head of the modified list
+
+## Challenge
+A method that takes two linked lists and merges them together, returning the head of the modified list
+
+
+## Approach & Efficiency
+
+Worked off of previously written linked list code. Tried to switch around the head and next values of the two lists, but that didn't work, so I consulted ![Geeks for Geeks](https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/)
+
+I'm still not sure the list is actually merging, or how to incorpate the second list.
+
+
+## Solution
+
+![whiteboarding solution for reverse](./assets/ll_merged_list.jpg)

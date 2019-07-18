@@ -187,3 +187,19 @@ def test_k_in_middle():
     assert ll.head.node_value == 'a'
     assert ll.head.next.next.next.node_value == 'd'
     assert ll.kth_from_end(1) == 'c'
+
+
+# TEST FOR MERGED LIST
+def test_merged_list():
+    list_to_create_1 = 'fedcba'
+    list_to_create_2 = 'lkjihg'
+    ll_1 = LinkedList()
+    ll_2 = LinkedList()
+
+    for item in list_to_create_1:
+        ll_1.insert(item)
+    for item in list_to_create_2:
+        ll_2.insert(item)
+
+    assert ll_1.head.node_value == 'a'
+    
