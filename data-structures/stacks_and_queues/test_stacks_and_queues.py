@@ -97,7 +97,7 @@ def test_dequeue():
     
 
 # Can successfully peek into a queue, seeing the expected value
-# @pytest.mark.skip('passing')
+@pytest.mark.skip('passing')
 def test_peek_into_queue():
     q = Queue()
 
@@ -111,13 +111,21 @@ def test_peek_into_queue():
     assert q.peek() == 'a'
 
 # Can successfully empty a queue after multiple dequeues
-@pytest.mark.skip('HELP')
+@pytest.mark.skip('PASS')
 def test_dequeue_queue_to_empty():
     q = Queue()
-    pass
+
+    q.enqueue('a')
+    q.enqueue('b')
+    q.enqueue('c')
+
+    q.dequeue()
+    q.dequeue()
+    q.dequeue()
+    assert q.peek() == None
 
 # Can successfully instantiate an empty queue
-@pytest.mark.skip('HELP')
+@pytest.mark.skip('PASS')
 def test_instantiate_empty_queue():
     q = Queue()
 
