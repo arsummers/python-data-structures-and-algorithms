@@ -29,7 +29,7 @@ class Stack:
     
     
 class Queue:
-    # https://www.geeksforgeeks.org/queue-set-2-linked-list-implementation/
+   
     def __init__(self):
         self.front = self.rear = None
     
