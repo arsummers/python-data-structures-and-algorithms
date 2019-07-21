@@ -23,6 +23,8 @@
 
    challenge 08 - linked list - merge/zip list
         [link to seventh challenge](./data-structures/linked_list)
+
+   challenge 10 - stacks and queues
      
 
 # Reverse an Array
@@ -144,3 +146,23 @@ I'm still not sure the list is actually merging, or how to incorpate the second 
 ## Solution
 
 ![whiteboarding solution for reverse](./assets/ll_merged_list.jpg)
+
+# Stacks and Queues
+Create a stack and a queue from a Linked List, and write the basic functions to read and navigate them.
+
+
+## Challenge
+Create a Node class,  LinkedList class, a Stack class, and a Queue class. Write a functions that insert values into the Stack and Queue, examine the first ones in the list, and remove values
+
+## Approach & Efficiency
+
+I wrote my base Node and Linked List class after the demos from lecture. My Stack functions most rely on information from class, and ![here](https://www.koderdojo.com/blog/coding-a-stack-abstract-data-structure-using-linked-list-in-python). I learned how to write my Queues functions from ![here](https://www.geeksforgeeks.org/queue-set-2-linked-list-implementation/)
+
+
+These should run at O(N)
+
+## API
+
+Stacks are First In, Last Out. Peek() views the top node in the stack. Pop() removes nodes from the stack. Push() adds nodes to the stack.
+
+Queues are First In, First Out. Like Peek() for Stacks, Peek() for Queues views the first node. Enqueue adds a node to the queue. Dequeue removes nodes.
