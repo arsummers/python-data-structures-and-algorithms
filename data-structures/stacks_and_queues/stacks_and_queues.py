@@ -21,11 +21,15 @@ class Stack:
         self._lst.insert(value)
     
     def pop(self, value):
-        pass
+
+        value = self._lst.head.value
+        self._lst.head= self._lst.head.next
+        
         
     
     
 class Queue:
+    # https://www.geeksforgeeks.org/queue-set-2-linked-list-implementation/
     def __init__(self):
         self.front = self.rear = None
     
