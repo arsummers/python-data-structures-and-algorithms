@@ -25,4 +25,9 @@ class Stack:
         self._lst.head = self._lst.head.next
 
 class PseudoQueue:
-    pass
+    def enqueue(self, value):
+        if s1.peek() == None:
+            
+
+    def dequeue(self):
+        pass
