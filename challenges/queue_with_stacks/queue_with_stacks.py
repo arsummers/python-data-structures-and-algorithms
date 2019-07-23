@@ -3,31 +3,62 @@ class Node:
         self.value = value
         self.next = next
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
-
-    def insert(self, value):
-        self.head = Node(value, self.head)
 
 class Stack:
     def __init__(self):
-        self._lst = LinkedList()
+        self.front = None
 
     def peek(self):
-        return self._lst.head and self._lst.head.value
+        if self.front is None:
+            return 'Empty stack'
+
+        return self.front.value
 
     def push(self, value):
-        self._lst.insert(value)
+  
+        self.front = Node(value, self.front)
     
     def pop(self):
-        value = self._lst.head.value
-        self._lst.head = self._lst.head.next
+       
+        if self.front is None:
+            return 'Empty stack'
+        value = self.front.value
+
+        return value
+        
+        
 
 class PseudoQueue:
+
+    def __init__(self):
+        self.s1 = Stack()
+        self.s2 = Stack()
+        
+
+    # # def peek(self):
+    # #     return self.s1
+    # def peek(self):
+    #     return self._lst.head and self._lst.head.value
+
     def enqueue(self, value):
-        if s1.peek() == None:
-            
+ 
+        if self.s1.peek() == None:
+            self.s2.push(value)
+            return
+
+        self.s2.push(self.s1.pop())
+        return self.enqueue(value)
+
 
     def dequeue(self):
-        pass
+        def dequeue_helper():
+            if self.s2.peek() == None:
+                return 'empty queue'
+            self.s1.push(self.s2.pop())
+            return dequeue_helper()
+
+        dequeue_helper()
+        
+        return self.s1.pop()
+
+

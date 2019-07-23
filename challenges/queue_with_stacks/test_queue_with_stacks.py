@@ -1,5 +1,5 @@
 import pytest
-from queue_with_stacks import Stack
+from queue_with_stacks import Stack, PseudoQueue
 # Can successfully push onto a stack
 def test_stack_push_one():
     s = Stack()
@@ -24,42 +24,39 @@ def test_stack_pop():
 
     s.pop()
     
-    assert s.peek() == 'b'
+    assert s.pop() == 'c'
 
 @pytest.mark.skip('fill')
 def test_enqueue_empty_stack():
-    s1 = Stack()
-    s2 = Stack()
+    q1 = PseudoQueue()
 
-    s1.enqueue('a')    
+    q1.enqueue('a')    
 
-    assert s1.peek() == 'a'
+    assert q1.peek() == 'a'
 
 @pytest.mark.skip('fill')
 def test_enqueue_stack_multiple():
-    s1 = Stack()
-    s2 = Stack()
+    q1 = PseudoQueue()
+    
 
-    s1.enqueue('a')    
-    s1.enqueue('b')    
-    s1.enqueue('c')    
+    q1.enqueue('a')    
+    q1.enqueue('b')    
+    q1.enqueue('c')    
 
-    assert s1.peek() == 'a'
+    assert q1.peek() == 'a'
 
 @pytest.mark.skip('fill')
 def test__dequeue_stack_of_one():
-    s1 = Stack()
-    s2 = Stack()
+    q1 = PseudoQueue()
 
-    s1.enqueue('a')    
-    s1.enqueue('b')    
-    s1.enqueue('c') 
+    q1.enqueue('a')    
+    q1.enqueue('b')    
+    q1.enqueue('c') 
 
-    assert dequeue() == 'a'
+    assert q1.dequeue() == 'a'
 
 @pytest.mark.skip('fill')
 def test_dequeue_empty_stack():
-    s1 = Stack()
-    s2 = Stack()
+    q1 = PseudoQueue()
 
-    assert dequeue() == 'empty stack'
+    assert q1.dequeue() == 'empty queue'

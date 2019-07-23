@@ -166,3 +166,18 @@ These should run at O(N)
 Stacks are First In, Last Out. Peek() views the top node in the stack. Pop() removes nodes from the stack. Push() adds nodes to the stack.
 
 Queues are First In, First Out. Like Peek() for Stacks, Peek() for Queues views the first node. Enqueue adds a node to the queue. Dequeue removes nodes.
+
+# Stacks and Queues - Queue of Two Stacks
+
+
+## Challenge
+
+
+
+## Approach & Efficiency
+https://www.koderdojo.com/blog/coding-a-stack-abstract-data-structure-using-linked-list-in-python
+
+
+## Solution
+
+![whiteboarding solution for stacky queue](./assets/pseudo_queue.jpg)
