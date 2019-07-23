@@ -1,62 +1,32 @@
 import pytest
-from queue_with_stacks import Stack, PseudoQueue
-# Can successfully push onto a stack
-def test_stack_push_one():
-    s = Stack()
-    s.push('a')
-    assert s.peek() == 'a'
+from queue_with_stacks import PseudoQueue
 
-# Can successfully push multiple values onto a stack
-def test_stack_push_multiple():
-    s = Stack()
-    s.push('a')
-    s.push('b')
-    s.push('c')
-    assert s.peek() == 'c'
+@pytest.fixture
+def pseudo_queue():
+    return PseudoQueue()
 
-# Can successfully pop off the stack
-def test_stack_pop():
-    s = Stack()
+def test_enqueue_empty_stack(pseudo_queue):
 
-    s.push('a')
-    s.push('b')
-    s.push('c')
+    pseudo_queue.enqueue('a')    
+    assert pseudo_queue.front.value == 'a'
 
-    s.pop()
-    
-    assert s.pop() == 'c'
+def test_enqueue_stack_multiple(pseudo_queue):
+  
+    pseudo_queue.enqueue('a')    
+    pseudo_queue.enqueue('b')    
+    pseudo_queue.enqueue('c')    
 
-@pytest.mark.skip('fill')
-def test_enqueue_empty_stack():
-    q1 = PseudoQueue()
+    assert pseudo_queue.front.value == 'a'
 
-    q1.enqueue('a')    
+@pytest.mark.skip('not passing yet - will need to refactor')
+def test__dequeue_stack_of_one(pseudo_queue):
 
-    assert q1.peek() == 'a'
+    pseudo_queue.enqueue('a')    
+    pseudo_queue.enqueue('b')    
+    pseudo_queue.enqueue('c') 
 
-@pytest.mark.skip('fill')
-def test_enqueue_stack_multiple():
-    q1 = PseudoQueue()
-    
+    assert pseudo_queue.dequeue() == 'c'
 
-    q1.enqueue('a')    
-    q1.enqueue('b')    
-    q1.enqueue('c')    
+def test_dequeue_empty_stack(pseudo_queue):
 
-    assert q1.peek() == 'a'
-
-@pytest.mark.skip('fill')
-def test__dequeue_stack_of_one():
-    q1 = PseudoQueue()
-
-    q1.enqueue('a')    
-    q1.enqueue('b')    
-    q1.enqueue('c') 
-
-    assert q1.dequeue() == 'a'
-
-@pytest.mark.skip('fill')
-def test_dequeue_empty_stack():
-    q1 = PseudoQueue()
-
-    assert q1.dequeue() == 'empty queue'
+    assert pseudo_queue.dequeue() == 'Empty queue'

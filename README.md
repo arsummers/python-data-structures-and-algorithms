@@ -168,16 +168,18 @@ Stacks are First In, Last Out. Peek() views the top node in the stack. Pop() rem
 Queues are First In, First Out. Like Peek() for Stacks, Peek() for Queues views the first node. Enqueue adds a node to the queue. Dequeue removes nodes.
 
 # Stacks and Queues - Queue of Two Stacks
-
+Create a pseudo queue class using two stacks
 
 ## Challenge
-
+use the pop, push, and peek functions in a stack class to create an enqueue and dequeue function
 
 
 ## Approach & Efficiency
-https://www.koderdojo.com/blog/coding-a-stack-abstract-data-structure-using-linked-list-in-python
+refactored and rewrote stack functions from ![koderdojo](https://www.koderdojo.com/blog/coding-a-stack-abstract-data-structure-using-linked-list-in-python)
+Skyler Burger helped explain pytest fixtures to me a couple days ago. I am using them here.
+Still need to refactor dequeue until it works as it should. Right now, the second stack isn't refilling with the stuff I popped from the first stack
 
 
 ## Solution
 
-![whiteboarding solution for stacky queue](./assets/pseudo_queue.jpg)
+![whiteboarding solution for stack queue](./assets/pseudo_queue.jpg)

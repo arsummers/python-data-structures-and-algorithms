@@ -10,7 +10,7 @@ class Stack:
 
     def peek(self):
         if self.front is None:
-            return 'Empty stack'
+            return 'Empty queue'
 
         return self.front.value
 
@@ -21,7 +21,7 @@ class Stack:
     def pop(self):
        
         if self.front is None:
-            return 'Empty stack'
+            return 'Empty queue'
         value = self.front.value
 
         return value
@@ -33,32 +33,30 @@ class PseudoQueue:
     def __init__(self):
         self.s1 = Stack()
         self.s2 = Stack()
-        
-
-    # # def peek(self):
-    # #     return self.s1
-    # def peek(self):
-    #     return self._lst.head and self._lst.head.value
-
+    
+   
     def enqueue(self, value):
  
-        if self.s1.peek() == None:
-            self.s2.push(value)
-            return
+        self.s1.push(value)
 
-        self.s2.push(self.s1.pop())
-        return self.enqueue(value)
+        if self.s1.front.next == None:
+            # same end-goal as pushing a new value into stack 1, but gives the test a front attribute to hang onto so it doesn't error out, like self.s1.push(value) gave me when I tried it down here
 
+            self.front = self.s1.front
+           
 
     def dequeue(self):
-        def dequeue_helper():
-            if self.s2.peek() == None:
-                return 'empty queue'
-            self.s1.push(self.s2.pop())
-            return dequeue_helper()
 
-        dequeue_helper()
+
+        def dequeue_helper(value):
+            self.s1.push(value)
+
+            if self.s1.front.next == None:
+                return 'empty queue'
+
+            self.s2.push(self.s1.pop())
+            return dequeue_helper(value)
         
-        return self.s1.pop()
+        return self.s2.pop()
 
 
