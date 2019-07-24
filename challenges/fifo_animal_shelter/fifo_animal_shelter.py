@@ -43,6 +43,8 @@ class Queue:
         return (mover.value)
 
 class FifoAnimalShelter:
+    # NOTICE: Stuff before the if statements are things I want to only live behind the scenes in the tests.
+
     dogs = ['pug', 'lab', 'beagle']
     cats = ['tabby', 'calico', 'bengal']
 
@@ -54,3 +56,21 @@ class FifoAnimalShelter:
     
     for cat in cats:
         cat_queue.enqueue(cat)
+
+    searched_animal = 'lab'
+
+
+# Want to return instead of print, but it won't let me return within the codeblock. Want to be able to check if the search value is in either queue - not sure how to set that part up.
+    if searched_animal in dogs:
+
+        adopted_dog = dog_queue.dequeue()
+
+        print(adopted_dog)
+    
+    if searched_animal in cats:
+        adopted_cat = cat_queue.dequeue()
+        print(adopted_cat)
+
+    else:
+        # want to return None here
+        pass
