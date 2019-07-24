@@ -34,7 +34,6 @@ def test_nonconsec_words():
 
     assert expected == actual
 
-
 def test_odd_some_matches():
     expected = False
     actual = multi_bracket_validation('[({}]')
