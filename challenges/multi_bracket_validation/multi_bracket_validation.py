@@ -16,10 +16,6 @@ def multi_bracket_validation(string):
         'curly_ct' : 0,
     }
 
-
-    if len(string) % 2 != 0:
-        return False
-
     for item in string:
         if item == '{':
             open_counters['curly_ct'] += 1
