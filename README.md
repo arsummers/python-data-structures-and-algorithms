@@ -22,9 +22,20 @@
         [link to seventh challenge](./data-structures/linked_list)
 
    challenge 08 - linked list - merge/zip list
-        [link to seventh challenge](./data-structures/linked_list)
+        [link to eighth challenge](./data-structures/linked_list)
 
    challenge 10 - stacks and queues
+        [link to tenth challenge](./data-structures/stacks_and_queues)
+
+   challenge 11 - queue with stacks
+        [link to eleventh challenge](./challenges/queue_with_stacks)
+
+   challenge 12 - FIFO animal shelter
+        [link to twelfth challenge](./challenges/fifo_animal_shelter)
+     
+     challenge 13 - Multi Bracket Validation
+        [link to thirteenth challenge](./challenges/multi_bracket_validation)
+     
      
 
 # Reverse an Array
@@ -183,3 +194,39 @@ Still need to refactor dequeue until it works as it should. Right now, the secon
 ## Solution
 
 ![whiteboarding solution for stack queue](./assets/pseudo_queue.jpg)
+
+# FIFO Animal Shelter
+write a function that simulates an animal shelter. Whoever's been there longest gets adopted first.
+
+## Challenge
+Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+
+Implement the following methods:
+enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
+
+dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
+
+
+## Approach & Efficiency
+Currently having some trouble getting tests to run properly, notes written, logic written, need better ways to check against pseudo-inputs.
+
+
+## Solution
+
+![whiteboarding solution for stack queue](./assets/fifo_animal_shelter.jpg)
+
+
+# Multi bracket validation
+Create a function called multi_bracket_validation
+
+## Challenge
+The function should get diffferent inputs of brackets (letters can be included too), and return True if they're a valid set (such as '[]', '{[]}()'), and return False if they are not (such as '{(})'). It will end up acting similar to a linter
+
+
+## Approach & Efficiency
+I'm checking against counters to see if each string has even the chance of having a mate. If the open and close counts don't match, return False. My main edge-case is currently hard-coded in to be able to pass. My initial idea was to test it against counts as the counts are generated, but that didn't work with the rest of it. I would like to refactor when given the time.
+
+
+## Solution
+
+![whiteboarding solution for stack queue](./assets/multi_bracket_validation.jpg)
