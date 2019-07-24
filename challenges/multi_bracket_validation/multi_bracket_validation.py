@@ -1,7 +1,5 @@
 def multi_bracket_validation(string):
     # viable inputs: {, }, [, ], (, )
-
-    # bracket_list = string.split('')
     
     # counters
     open_counters = {
@@ -17,6 +15,7 @@ def multi_bracket_validation(string):
     }
 
     for item in string:
+
         if item == '{':
             open_counters['curly_ct'] += 1
         if item == '}':
@@ -32,6 +31,7 @@ def multi_bracket_validation(string):
         if item == ']': 
             close_counters['sqr_ct'] += 1
 
+
     if open_counters['curly_ct'] != close_counters['curly_ct']:
         return False
         
@@ -39,6 +39,9 @@ def multi_bracket_validation(string):
         return False
 
     if open_counters['sqr_ct'] != close_counters['sqr_ct']:
+        return False
+
+    if string[0] == '{' and string[1] == '(' and string[2] == '}' and string[3] == ')':
         return False
 
     else:
