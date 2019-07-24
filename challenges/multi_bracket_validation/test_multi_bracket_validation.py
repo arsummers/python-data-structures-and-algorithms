@@ -69,3 +69,5 @@ def test_two_mismatch():
     actual = multi_bracket_validation('[}')
 
     assert expected == actual
+
+
