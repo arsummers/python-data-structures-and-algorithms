@@ -5,7 +5,7 @@ def test_exists():
     assert BinaryTree
     assert Node
 
-@pytest.fixture
+@pytest.fixture()
 def tree():
     one =  Node(1)
     two = Node(2)
@@ -26,7 +26,28 @@ def tree():
     seven.left = eight
     seven.right = nine
 
-    arbor = BinaryTree
+    arbor = BinaryTree()
     arbor.root = one
 
     return arbor
+
+def test_fixture_tree(tree):
+    assert tree
+
+def test_pre_order(tree):
+    expected = [1, 2, 6, 7, 8 , 9, 3, 4, 5]
+    actual = tree.pre_order()
+
+    assert expected == actual
+
+def test_in_order(tree):
+    expected = [6, 8, 7, 9, 2, 1, 4, 3, 5]
+    actual = tree.in_order()
+
+    assert expected == actual
+
+def test_post_order(tree):
+    expected = [8, 9 , 7, 6, 2, 4, 5, 3, 1]
+    actual = tree.post_order()
+
+    assert expected == actual
