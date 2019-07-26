@@ -58,4 +58,15 @@ class BinaryTree:
         return results
 
 class BinarySearchTree:
-    pass
+    
+    def __init__(self):
+        self.root = None
+        self.left = None
+        self.right = None
+
+    def add(self, value):
+        pass
+
+    def contains(self, value):
+        pass
+        # returns a boolean representing if the value appears in the tree or not
