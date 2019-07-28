@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, value, left=None, right=None):
+    def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
@@ -62,18 +62,11 @@ class BinaryTree:
 
 class BinarySearchTree:
     def __init__(self):
-        # self.value = value
         self.root = None
-        # self.left = None
-        # self.right = None
-
 
     def add(self, value):
-        # node is the insertion point
 
-
-
-        # if value < node.value:
+       # if value < node.value:
         #     if node.left is None:
         #         node.left = TreeNode(value)
         #     else:
@@ -85,35 +78,63 @@ class BinarySearchTree:
         #     else:
         #         add(value, node.right
 
-        def find_position(node):
-            if node is None:
-                node = self.root
+        # def find_position(node):
+            # if node is None:
+            #     node = self.root
 
-            else:
-                if value < node.value:
-                    if node.right is None:
-                        node.right = node
-                    else:
-                        # root.left = node.value
-                        find_position(node.right)
-                    
-                else:
-                    if node.left is None:
-                        node.left = node
-                    else:
-                        # root.right = node.value
-                        find_position(node.left)
+        #     else:
+        #         if value < node.value:
+        #             breakpoint()
+        #             if node.right is None:
+        #                 node.right = node
+        #             else:
+        #                 # self.root.left = node.value
+        #                 find_position(node.right)
+                        
+        #         else:
+        #             if node.left is None:
+        #                 node.left = node
+        #             else:
+        #                 # root.right = node.value
+        #                 find_position(node.left)
 
-        if not self.root:
+        #     else:
+        #         if value < node.value:
+        #             if node.right is None:
+        #                 node.right = Node(value)
+
+        # if not self.root:
+        #     self.root = Node(value)
+        #     return
+
+
+        if self.root is None:
             self.root = Node(value)
-            return
+
+        else:
+            self.find_position(value, self.root)
+
+    def find_position(self, value, current_node):
+        if value < current_node.value:
+            if current_node.left is None:
+                current_node.left = Node(value)
+            else:
+                self.find_position(value, current_node.left)
+
+        elif value > current_node.value:
+            if current_node.right is None:
+                current_node.right = Node(value)
+            else:
+                self.find_position(value, current_node.right)
+     
+
                             
-        find_position(self.root)            
+        # find_position(self.root)            
                 
        
     def contains(self, value, node):
         
-        if node is None or node.value ==value:
+        if node is None or node.value == value:
             return node
         elif value < node.value:
             return contains(value, node.left_child)

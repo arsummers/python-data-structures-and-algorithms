@@ -6,10 +6,10 @@ def test_exists():
 
 def test_add_to_empty():
     tree = BinarySearchTree()
-    tree.add('orange')
-    assert tree.root.value == 'orange'
+    tree.add(50)
+    assert tree.root.value == 50
 
-@pytest.mark.skip()
+
 def test_add_smaller():
     tree = BinarySearchTree()
     tree.add(50)
@@ -18,7 +18,7 @@ def test_add_smaller():
     assert tree.root.value == 50
     assert tree.root.left.value == 25
 
-@pytest.mark.skip()
+# @pytest.mark.skip()
 def test_add_larger():
     tree = BinarySearchTree()
     tree.add(50)
