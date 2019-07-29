@@ -70,9 +70,10 @@ def fizz_buzz_tree(tree):
         elif node.value % 5 == 0:
             node.value = 'buzz'
 
-        if tree.root.left:
+
+        if node.left:
             visit(node.left)
-        if tree.root.right:
+        if node.right:
             visit(node.right)
 
     visit(tree.root)

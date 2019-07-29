@@ -53,4 +53,4 @@ def test_tree_traversal(tree):
 def test_fizzbuzz_tree(tree):
     modified_tree = fizz_buzz_tree(tree)
 
-    assert modified_tree.root.value == 35
+    assert modified_tree.root.value == 'FizzBuzz'
