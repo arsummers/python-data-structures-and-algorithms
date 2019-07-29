@@ -15,7 +15,7 @@ def tree():
     thirty_one = Node(31)
     nine = Node(9)
     seventeen = Node(17)
-    thirteen = Node(14)
+    thirteen = Node(13)
     three = Node(3)
     twenty_one = Node(21)
     thirty = Node(30)
@@ -50,7 +50,39 @@ def test_tree_traversal(tree):
     assert tree.root.value == 15
     assert tree.root.right.right.left.value == 10
 
-def test_fizzbuzz_tree(tree):
+def test_fizzbuzz_number(tree):
     modified_tree = fizz_buzz_tree(tree)
 
     assert modified_tree.root.value == 'FizzBuzz'
+    assert modified_tree.root.right.right.value == 'FizzBuzz'
+
+
+def test_unmodded_number(tree):
+    modified_tree = fizz_buzz_tree(tree)
+
+    assert modified_tree.root.left.value == 2
+    assert modified_tree.root.left.left.right.value == 7
+    assert modified_tree.root.right.value == 17
+    assert modified_tree.root.right.left.value == 13
+    assert modified_tree.root.right.right.left.left.value == 1
+
+def test_fizzes(tree):
+    modified_tree = fizz_buzz_tree(tree)
+
+    assert modified_tree.root.left.right.right.value == 'fizz'
+    assert modified_tree.root.right.left.left.value == 'fizz'
+    assert modified_tree.root.right.left.left.right.value == 'fizz'
+
+def test_buzzes(tree):
+    modified_tree = fizz_buzz_tree(tree)
+
+    assert modified_tree.root.left.left.value == 'buzz'
+    assert modified_tree.root.right.right.left.value == 'buzz'
+    assert modified_tree.root.right.right.left.right.value == 'buzz'    
+
+
+
+    
+
+
+    
