@@ -39,6 +39,9 @@
    challenge 14 - Binary Search Tree - add and search
         [link to fourteens challenge](./data-structures/tree)
 
+   challenge 15 - Fizz Buzz Tree
+        [link to fizz buzz tree](./challenges/fizzbuzz_tree)
+
      
      
 
@@ -256,3 +259,20 @@ The Big O for the Binary Search Tree is O(h), the height of the tree. The Big O 
 
 ## API
 visit traverses the basic binary tree in different manners. Add inserts a node and value onto the binary search tree. Contains traverses the tree searching for a value, and returns a boolean indication whether or not it exists in the tree.
+
+# Fizz buzz tree
+Create a function called fizz_buzz_tree, that follows the rules of fizzbuzz to modify a binary tree
+
+## Challenge
+Write a function that takes in a binary tree (but not a binary search tree), and replaces values divisibly by 3 and 5 with FizzBuzz, values divisible by 3 with fizz, and values divisible by 5 with buzz.
+
+
+## Approach & Efficiency
+Used former binary tree code to set up a tree for testing. Checked against fizzbuzz conditions first, so they would hit first if something qualified. The visit function traverses the tree recursively, and checks each time. Skyler Burger helped with a small piece of syntax I had missing.
+
+This should run at O(h), where h is the height of the tree.
+
+
+## Solution
+
+![whiteboarding solution for fizzbuzz tree](./assets/fizzbuzz_tree.jpg)
