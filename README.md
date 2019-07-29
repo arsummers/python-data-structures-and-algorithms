@@ -33,8 +33,12 @@
    challenge 12 - FIFO animal shelter
         [link to twelfth challenge](./challenges/fifo_animal_shelter)
      
-     challenge 13 - Multi Bracket Validation
+   challenge 13 - Multi Bracket Validation
         [link to thirteenth challenge](./challenges/multi_bracket_validation)
+
+   challenge 14 - Binary Search Tree - add and search
+        [link to fourteens challenge](./data-structures/tree)
+
      
      
 
@@ -230,3 +234,25 @@ I'm checking against counters to see if each string has even the chance of havin
 ## Solution
 
 ![whiteboarding solution for stack queue](./assets/multi_bracket_validation.jpg)
+
+# Trees
+Create a basic binary tree, and a binary search tree with add and search methods. 
+
+## Challenge
+
+Create a binary search tree, with methods to add and search the tree.
+
+## Approach & Efficiency
+
+Sought help from ![LucidProgramming's](https://www.youtube.com/watch?v=yC83Kp2xig8) YouTube video on the binary search tree. Tried a few different approaches, but this is the first one I was able to get working. I found it easy to follow too. 
+
+To accurately test my ability to generate a binary search tree from a list of random numbers, I sketched my tree out on a whiteboard.
+
+Thanks to ![Code Fellows](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-15/resources/Trees.html) for explaining the Big O for the trees better than I'd be able to at this point.
+
+The Big O of the Binary Tree (not the search tree) will be O(N) for time,  since it will have to involve the whole tree as a worst-case scenario. The Big O for space is O(log n). 
+
+The Big O for the Binary Search Tree is O(h), the height of the tree. The Big O for a search is O(1), since no extra space is required.
+
+## API
+visit traverses the basic binary tree in different manners. Add inserts a node and value onto the binary search tree. Contains traverses the tree searching for a value, and returns a boolean indication whether or not it exists in the tree.

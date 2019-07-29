@@ -61,11 +61,16 @@ class BinaryTree:
 
 
 class BinarySearchTree:
-    # https://www.youtube.com/watch?v=yC83Kp2xig8
+
+    """ 
+    recursively adds values at given points in the Binary Search Tree. Helper function find_position does the dirty work of locating where to put the new node and value
+    """  
     def __init__(self):
         self.root = None
 
     def add(self, value):
+
+
 
         if self.root is None:
             self.root = Node(value)
@@ -87,20 +92,26 @@ class BinarySearchTree:
                 self.find_position(value, current_node.right)
               
                 
-       
-    def contains(self, value, node):
-        
-        if node is None or node.value == value:
-            return node
-        elif value < node.value:
-            return contains(value, node.left_child)
+
+    """
+    Checks to see if the tree contains a given value. Returns a boolean
+    """
+    def contains_helper(self, value, current_node):
+        if value > current_node.value and current_node.right:
+            return self.contains_helper(value, current_node.right)
+        elif value < current_node.value and current_node.left:
+            return self.contains_helper(value, current_node.left)
+            
+        if value == current_node.value:
+            return True 
+
+    def contains(self, value):
+        if self.root:
+
+            is_found = self.contains_helper(value, self.root)
+            if is_found:
+                return True
+            return False
+
         else:
-            return contains(value, node.right_child)
-        # returns a boolean representing if the value appears in the tree or not
-        # if self == null
-            # return false
-        # if key == search value
-            # return true
-        # if key < search value
-            # search to the right
-        # otherwise search to the left
+            return None
