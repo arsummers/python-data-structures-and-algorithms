@@ -42,6 +42,8 @@
    challenge 15 - Fizz Buzz Tree
         [link to fizz buzz tree](./challenges/fizzbuzz_tree)
 
+   challenge 15 - Fizz Buzz Tree
+        [link to fizz buzz tree](./challenges/breadth_first_tree)
      
      
 
@@ -276,3 +278,19 @@ This should run at O(h), where h is the height of the tree.
 ## Solution
 
 ![whiteboarding solution for fizzbuzz tree](./assets/fizzbuzz_tree.jpg)
+
+
+# Breadth-first tree traversal
+Traverse a binary tree breadth-first, rather than depth-first
+
+## Challenge
+Write a traversal method on a binary tree that takes all the values of the tree, and examines them essentially line by line (see visual in whiteboarded solution), printing out their values.
+
+## Approach & Efficiency
+
+Trying to do this with a while loop, that makes sure there's nodes and values living in the tree, but since the function doesn't recognize the peek method I imported from my previously written queue, my hands are tied until I can figure that out.
+
+Once finished and working, I believe this should run at O(n), since it will have to check each node of the tree, but won't have any nested loops or recursion.
+## Solution
+
+![whiteboarding solution for fizzbuzz tree](./assets/breadth_first.jpg)

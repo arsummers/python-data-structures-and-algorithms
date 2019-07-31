@@ -1,8 +1,19 @@
+import collections
+
+
 class Node:
     def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
+
+class Queue:
+   
+    def __init__(self):
+        self.front = self.rear = None
+
+        def peek(self):
+            return self.front and self.front.value
 
 class BinaryTree:
     def __init__(self):
@@ -56,4 +67,28 @@ class BinaryTree:
 
         visit(self.root)
         return results
+
+    def breadth_first(self):
+        results = []
+        queue = Queue()
+        working_queue = collections.deque([])
+
+        def handle_tree(tree):
+            while queue.peek():
+                results.append(working_queue.pop())
+
+                if queue.front.left is not None:
+                    results.append(working_queue.pop())
+                
+                if queue.front.right is not None:
+                    results.append(working_queue.pop())
+
+
+        queue.append(self.root)
+        
+        # do things that put it into list. print each thing in the list
+        def printing_time():
+            for item in results:
+                print(item)
+        printing_time() 
 
