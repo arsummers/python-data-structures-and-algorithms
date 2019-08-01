@@ -42,10 +42,11 @@
    challenge 15 - Fizz Buzz Tree
         [link to fizz buzz tree](./challenges/fizzbuzz_tree)
 
-   challenge 15 - Fizz Buzz Tree
+   challenge 16 - Bread First Tree
         [link to fizz buzz tree](./challenges/breadth_first_tree)
      
-     
+   challenge 17 - Max Value in Tree
+        [link to max tree value](./challenges/maximum_tree_value)  
 
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
@@ -291,6 +292,21 @@ Write a traversal method on a binary tree that takes all the values of the tree,
 Trying to do this with a while loop, that makes sure there's nodes and values living in the tree, but since the function doesn't recognize the peek method I imported from my previously written queue, my hands are tied until I can figure that out.
 
 Once finished and working, I believe this should run at O(n), since it will have to check each node of the tree, but won't have any nested loops or recursion.
+## Solution
+
+![whiteboarding solution for fizzbuzz tree](./assets/breadth_first.jpg)
+
+# Max Value In Tree
+Find and return the maximum value in a binary tree
+
+## Challenge
+Write a function that takes in a binary tree and returns the maximum value it contains.
+
+## Approach & Efficiency
+
+Did this challenge two ways. The first traverses the tree in the same manner my basic binary tree does. It appends each values to a list, then returns the maximum item in that list using python's built-in max function. The Big O of time is O(n). The Big O of space is O(2n), which evens out to O(n).
+
+The second compares values as it traverses the tree, and returns the max value after it finishes traversal. The Big O of time is O(n). The space is O(h), where h is the height of the tree.
 ## Solution
 
 ![whiteboarding solution for fizzbuzz tree](./assets/breadth_first.jpg)

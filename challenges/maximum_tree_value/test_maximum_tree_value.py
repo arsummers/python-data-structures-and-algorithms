@@ -1,5 +1,5 @@
 import pytest
-from maximum_tree_value import BinaryTree, Node, find_maximum_value
+from maximum_tree_value import BinaryTree, Node, find_maximum_value, find_maximum_value_other_way
 
 def test_exists():
     assert BinaryTree
@@ -37,12 +37,6 @@ def tree():
 def test_fixture_tree(tree):
     assert tree
 
-def test_in_order(tree):
-    expected = [6, 8, 7, 9, 2, 1, 4, 3, 5]
-    actual = tree.in_order()
-
-    assert expected == actual
-
 def test_single_max_value(tree):
      
     expected = 420
@@ -50,7 +44,9 @@ def test_single_max_value(tree):
     assert expected == actual
 
     
-
-
+def test_max_other_way(tree):
+    expected = 420
+    actual = find_maximum_value_other_way(tree)
+    assert expected == actual
 
 

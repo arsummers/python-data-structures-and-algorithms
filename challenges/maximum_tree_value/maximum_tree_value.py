@@ -30,6 +30,7 @@ tree = BinaryTree()
 def find_maximum_value(tree):
 
     results = []
+
     def visit(node):
         if node.left:
             visit(node.left)
@@ -43,4 +44,21 @@ def find_maximum_value(tree):
     return max(results) 
 
 def find_maximum_value_other_way(tree):
-    pass
+    current_max = tree.root.value
+
+    def visit(node):
+        nonlocal current_max
+        if node.left:
+            visit(node.left)
+
+            if node.left.value > current_max:
+                current_max = node.left.value
+
+        if node.right:
+            visit(node.left)
+
+            if node.right.value > current_max:
+                current_max = node.right.value
+        
+    visit(tree.root)
+    return current_max
