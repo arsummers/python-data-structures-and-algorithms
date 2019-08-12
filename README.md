@@ -310,3 +310,4 @@ The second compares values as it traverses the tree, and returns the max value a
 ## Solution
 
 ![whiteboarding solution for fizzbuzz tree](./assets/breadth_first.jpg)
+
