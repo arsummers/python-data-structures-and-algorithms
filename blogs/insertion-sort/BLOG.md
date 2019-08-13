@@ -18,7 +18,7 @@ It is less efficient than many other sorting algorithms, as it runs at O(n^2), w
     -  Additional readings and references
 
 ## Diagram
-![visualization for insertion sort](./assets/insertion-sort.png)
+![visualization for insertion sort](../assets/insertion-sort.png)
 
 ## Algorithm
 
@@ -64,13 +64,13 @@ Pseudocode provided courtest of Codefellows
 
 # Watch
 
-     - [Geeks For Geeks algorithm video](https://www.youtube.com/watch?v=OGzPmgsI-pQ)
+- [Geeks For Geeks algorithm video](https://www.youtube.com/watch?v=OGzPmgsI-pQ)
 # Read
 
-    - [Medium's BaseCS Insertion Sort Post](https://medium.com/basecs/inching-towards-insertion-sort-9799274430da)
+- [Medium's BaseCS Insertion Sort Post](https://medium.com/basecs/inching-towards-insertion-sort-9799274430da)
 
-    - [Wikipedia's Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
+- [Wikipedia's Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
     
 # Bookmark
 
-    - [Geeks for Geeks' algorithm and code](https://www.geeksforgeeks.org/insertion-sort/)
+- [Geeks for Geeks' algorithm and code](https://www.geeksforgeeks.org/insertion-sort/)
