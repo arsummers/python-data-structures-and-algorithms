@@ -311,3 +311,14 @@ The second compares values as it traverses the tree, and returns the max value a
 
 ![whiteboarding solution for fizzbuzz tree](./assets/breadth_first.jpg)
 
+
+# Insertion Sort
+
+## Challenge
+Sort a list using the insertion method
+
+## Approach & Efficiency
+Worked off of given pseudo code to build sort in Python. Relies in switching and inserting variables. Runs at O(n^2). 
+
+## Solution
+![visualization for insertion sort](./assets/insertion-sort.png)
