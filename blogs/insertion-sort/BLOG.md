@@ -18,7 +18,7 @@ It is less efficient than many other sorting algorithms, as it runs at O(n^2), w
     -  Additional readings and references
 
 ## Diagram
-![visualization for insertion sort](../assets/insertion-sort.png)
+![visualization for insertion sort](../../assets/insertion-sort.png)
 
 ## Algorithm
 
