@@ -5,7 +5,6 @@
    challenge 01 - reverse array
         [link to first challenge](./challenges/array_reverse)
 
-
    challenge 02 - shift an array
         [link to second challenge](./challenges/array_shift)
 
@@ -318,7 +317,18 @@ The second compares values as it traverses the tree, and returns the max value a
 Sort a list using the insertion method
 
 ## Approach & Efficiency
-Worked off of given pseudo code to build sort in Python. Relies in switching and inserting variables. Runs at O(n^2). 
+Worked off of given pseudo code to build insertion sort in Python. Relies on switching and inserting variables. Runs at O(n^2). 
 
 ## Solution
 ![visualization for insertion sort](./assets/insertion-sort.png)
+
+# Merge Sort
+
+## Challenge
+Sort a list using the merge method
+
+## Approach & Efficiency
+Worked off of given pseudo code to build merge sort in Python. Relies on dividing the given array into smaller arrays, sorting those, and bringing everything back together. Runs at O(nlogn). 
+
+## Solution
+![visualization for insertion sort](./assets/merge_sort.png)
