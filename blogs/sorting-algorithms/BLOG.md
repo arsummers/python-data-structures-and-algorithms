@@ -244,7 +244,8 @@ While this will usually run at O(nlogn), in a worst-case scenario, it will run a
     -  Additional readings and references
 
 ## Diagram
-![visualization for insertion sort](../../assets/merge_sort.png)
+
+Travel [here](https://visualgo.net/en/sorting) and click on the tab reading QUI to see a moving visual representation of quicksort with a pseudo code run-through.
 
 ## Algorithm
 Unlike the first two algorithms in this blog, quicksort takes in arguments beyond just an array. This relies on two functions for recursion, `quick_sort` and `partition`. When we set up quicksort, it looks like this:
@@ -289,9 +290,38 @@ When we return `low-1` at the end of our `parition` function, it allows us to co
 
 ## Pseudocode
 
-Pseudocode provided courtesy of Codefellows and adapted from Geeks for Geeks
+Pseudocode provided courtesy of Codefellows. Note: Think about how you can use some of the built-in features for python to shorten the `swap` function.
 ```
+ALGORITHM QuickSort(arr, left, right)
+    if left < right
+        // Partition the array by setting the position of the pivot value 
+        DEFINE position <-- Partition(arr, left, right)
+        // Sort the left
+        QuickSort(arr, left, position - 1)
+        // Sort the right
+        QuickSort(arr, position + 1, right)
 
+ALGORITHM Partition(arr, left, right)
+    // set a pivot value as a point of reference
+    DEFINE pivot <-- arr[right]
+    // create a variable to track the largest index of numbers lower than the defined pivot
+    DEFINE low <-- left - 1
+    for i <- left to right do
+        if arr[i] <= pivot
+            low++
+            Swap(arr, i, low)
+
+     // place the value of the pivot location in the middle.
+     // all numbers smaller than the pivot are on the left, larger on the right. 
+     Swap(arr, right, low + 1)
+    // return the pivot index point
+     return low + 1
+
+ALGORITHM Swap(arr, i, low)
+    DEFINE temp;
+    temp <-- arr[i]
+    arr[i] <-- arr[low]
+    arr[low] <-- temp
 ```
 
 
@@ -300,16 +330,16 @@ Pseudocode provided courtesy of Codefellows and adapted from Geeks for Geeks
 
 # Watch
 
-- [Youtube video from Michael Sambol](https://www.youtube.com/watch?v=4VqmGXwpLqc)
+- [Watch robots do a quick sort](https://www.youtube.com/watch?v=aXXWXz5rF64)
 # Read
 
-- [Medium's BaseCS Introductory Merge Sort Post](https://medium.com/basecs/making-sense-of-merge-sort-part-1-49649a143478)
+- [Medium's BaseCS Introductory Quick Sort Post](https://medium.com/basecs/pivoting-to-understand-quicksort-part-1-75178dfb9313)
 
-- [From Hacker Earth](https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/)
+- [From Hacker Earth](https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/)
 
-Wikipedia is also a useful source here!
+Wikipedia is also a useful source!
     
 # Bookmark
 
-- [Geeks for Geeks' algorithm and code](https://www.geeksforgeeks.org/merge-sort/)
+- [Geeks for Geeks' algorithm and code](https://www.geeksforgeeks.org/quick-sort/)
 I was able to easily adapt parts of this into my algorithm.

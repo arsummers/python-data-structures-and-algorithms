@@ -332,3 +332,14 @@ Worked off of given pseudo code to build merge sort in Python. Relies on dividin
 
 ## Solution
 ![visualization for insertion sort](./assets/merge_sort.png)
+
+# Quick Sort
+
+## Challenge
+Sort a list using the quick sort method
+
+## Approach & Efficiency
+Worked off of given pseudo code to build a quick sort algorithm in Python. Works recursively using a divide and conquer strategy to sort subsections of an array at a given pivot point, and return the modified array. While the time complexity will usually run at O(nlogn), in a worst case scenario it will run at O(n^2). In most cases, this will be a more efficient sort than merge sort.
+
+## Solution
+[Link to blog](./blogs/BLOG.md)
