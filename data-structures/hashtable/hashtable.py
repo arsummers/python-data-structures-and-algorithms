@@ -1,17 +1,32 @@
-# from linked_list.linked_list import LinkedList
+# from data-structures.linked_list.linked_list import LinkedList
+from linked_list import LinkedList
 
 class HashTable:
     def __init__(self):
-        buckets = self.buckets
+        self.buckets = [LinkedList()] * 1024
 
     def hash(self, key):
-        pass
+        ascii_sum_for_key = sum([ord(char) for char in key])
+
+        prime_num = 599
+
+        hashing_index = (ascii_sum_for_key * prime_num) % len(self.buckets)
+
+        return hashing_index
+
 
     def add(self, key, value):
-        pass
+        index = self.hash(key)
+
+        bucket = self.buckets[index]
+        
+        bucket.insert({'key':key, 'value':value})
 
     def get(self, key):
-        pass
+        index = self.hash(key)
+        bucket = self.buckets[index]
+
+        return None
 
     def contains(self, key):
         pass
