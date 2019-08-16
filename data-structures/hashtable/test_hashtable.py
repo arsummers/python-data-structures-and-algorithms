@@ -4,18 +4,21 @@ from hashtable import HashTable
 def test_exists():
     assert HashTable
 
+@pytest.mark.skip()
 def test_get_missing():
     ht = HashTable()
 
     with pytest.raises(ValueError):
         ht.get('cats')
 
+# @pytest.mark.skip()
 def test_add():
     ht = HashTable()
     ht.add('spam', 'eggs')
 
     assert ht.get('spam') == 'eggs'
 
+@pytest.mark.skip()
 def test_contains():
     ht = HashTable()
     ht.add('spam', 'eggs')
@@ -32,6 +35,7 @@ def test_hash_same():
 
     assert ht.hash('dogs') == ht.hash('gods')
 
+@pytest.mark.skip()
 def test_hash_in_range():
     ht = HashTable()
 
@@ -42,6 +46,7 @@ def test_different_hashes():
 
     assert not ht.hash('dogs') == ht.hash('cats')
 
+@pytest.mark.skip()
 def test_collision():
     ht = HashTable()
     ht.add('cats', 'cat things')

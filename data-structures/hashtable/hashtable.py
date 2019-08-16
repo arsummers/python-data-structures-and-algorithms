@@ -1,5 +1,4 @@
-# from data-structures.linked_list.linked_list import LinkedList
-from linked_list import LinkedList
+from linked_list import LinkedList, Node
 
 class HashTable:
     def __init__(self):
@@ -23,13 +22,25 @@ class HashTable:
         bucket.insert({'key':key, 'value':value})
 
     def get(self, key):
+      
         index = self.hash(key)
         bucket = self.buckets[index]
 
         # traverse through bucket (aka linked list)
         # to find matching key and return corresponding value
-        
-        return None
+        for item in self.buckets:
+            bucket.traverse()
+            kvp = bucket.head.value
+            # if bucket.head.value['key'] == item.head.value['key']:
+
+            # breakpoint()
+            if kvp['key'] == key:
+                return kvp['value']
+            else:
+                return None
+                
+
+        # return None
 
     def contains(self, key):
         pass
