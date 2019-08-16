@@ -10,8 +10,8 @@ def test_get_missing():
 
     with pytest.raises(ValueError):
         ht.get('cats')
-
-# @pytest.mark.skip()
+        
+@pytest.mark.skip()
 def test_add():
     ht = HashTable()
     ht.add('spam', 'eggs')
@@ -35,18 +35,17 @@ def test_hash_same():
 
     assert ht.hash('dogs') == ht.hash('gods')
 
-@pytest.mark.skip()
 def test_hash_in_range():
     ht = HashTable()
 
-    assert 0 <= ht.hash('cats') > len(ht.buckets)
+    assert 0 <= ht.hash('cats') < len(ht.buckets)
 
 def test_different_hashes():
     ht = HashTable()
 
     assert not ht.hash('dogs') == ht.hash('cats')
 
-@pytest.mark.skip()
+# @pytest.mark.skip()
 def test_collision():
     ht = HashTable()
     ht.add('cats', 'cat things')

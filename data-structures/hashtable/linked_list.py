@@ -12,6 +12,18 @@ class LinkedList:
         while(temp):
             temp = temp.next
 
+    def append_val(self, value):
+        new_node = Node(value)
+
+        if self.head is None:
+            self.head = new_node
+            return
+        
+        end_point = self.head
+        while (end_point.next):
+            end_point = end_point.next
+        end_point.next = new_node
+
 class Node:
     def __init__(self, value, next=None):
         self.value = value
