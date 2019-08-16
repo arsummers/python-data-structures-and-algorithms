@@ -26,6 +26,9 @@ class HashTable:
         index = self.hash(key)
         bucket = self.buckets[index]
 
+        # traverse through bucket (aka linked list)
+        # to find matching key and return corresponding value
+        
         return None
 
     def contains(self, key):
