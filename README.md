@@ -45,7 +45,10 @@
         [link to fizz buzz tree](./challenges/breadth_first_tree)
      
    challenge 17 - Max Value in Tree
-        [link to max tree value](./challenges/maximum_tree_value)  
+        [link to max tree value](./challenges/maximum_tree_value) 
+
+   challenge 30 - Hash table
+        [link to hash table](./data-structures/hashtable) 
 
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
@@ -343,3 +346,22 @@ Worked off of given pseudo code to build a quick sort algorithm in Python. Works
 
 ## Solution
 [Link to blog](./blogs/BLOG.md)
+
+# Hashtables
+A hashtable written in python to accomodate unique key/value pairs
+
+## Challenge
+Create a hashtable in python, with methods to: create a hashing index, add key/value pairs, retrieve values based on keys, and check if the table contains a value.
+
+## Approach & Efficiency
+Worked from tests and demo code written in class to build the table. Generated a large list of linked lists, so that if collisions occur, the new values can be tacked onto the linked list, rather than overwriting the previously existing values.
+
+## API
+
+Hashing function uses ascii values to generate a number based on the input string (the sum of each ascii value in the string). It is then multiplied by a large prime number, so it has a much lower chance of having the same hashing index as another key, then the modulus of that number is taken. That becomes the hashing index.
+
+Add uses the linked list's insert function to create and append new nodes to the linked list instances.
+
+Get returns the value of a key
+
+Contains returns a boolean checking if the hashtable contains a key or not. This function needs some work to accomodate multiple things being in the table.
