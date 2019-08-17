@@ -4,7 +4,6 @@ from hashtable import HashTable
 def test_exists():
     assert HashTable
 
-@pytest.mark.skip()
 def test_get_missing():
     ht = HashTable()
 
@@ -26,9 +25,6 @@ def test_add_twice():
     assert ht.get('spam') == 'eggs'
     assert ht.get('things') == 'stuff'
 
-
-
-@pytest.mark.skip()
 def test_contains():
     ht = HashTable()
     ht.add('spam', 'eggs')
@@ -39,6 +35,7 @@ def test_not_contains():
     ht = HashTable()
 
     assert not ht.contains('spam')
+
 
 def test_hash_same():
     ht = HashTable()
@@ -55,13 +52,34 @@ def test_different_hashes():
 
     assert not ht.hash('dogs') == ht.hash('cats')
 
-# @pytest.mark.skip()
+
 def test_collision():
     ht = HashTable()
     ht.add('cats', 'cat things')
     ht.add('acts', 'acting things')
     new_cats = ht.get('cats')
     new_acts = ht.get('acts')
-#     breakpoint()
+
     assert new_cats == 'cat things'
-#     assert new_acts == 'acting things'
+    assert new_acts == 'acting things'
+
+
+# These are the tests I added on my own. Don't have them passing yet, but I do have some questions
+@pytest.mark.skip()
+def test_contains_with_collision():
+    ht = HashTable()
+    ht.add('spam', 'eggs')
+    ht.add('maps', 'stuff')
+
+    assert ht.contains('spam')
+    assert ht.contains('maps')
+
+
+@pytest.mark.skip()
+def test_contains_multiple():
+    ht = HashTable()
+    ht.add('spam', 'eggs')
+    ht.add('things', 'stuff')
+
+    assert ht.contains('spam')
+    assert ht.contains('maps')

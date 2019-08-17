@@ -22,9 +22,6 @@ class HashTable:
         bucket.insert({'key':key, 'value':value})
         
         
-
-
-
     def get(self, key):
       
         index = self.hash(key)
@@ -39,7 +36,24 @@ class HashTable:
             if key_val_pair['key'] == key:
                 return key_val_pair['value']
             
-                
+        else:
+            raise(ValueError)
 
     def contains(self, key):
-        pass
+        index = self.hash(key)
+        bucket = self.buckets[index]
+        current = bucket.head
+        
+        while current:
+            key_val_pair = current.value
+            # current starts coming up Nonetype here when I try testing multiple things
+            current = current.next
+            if key == key_val_pair['key']:
+                return True
+            else:
+                return False
+            
+            
+
+
+        
