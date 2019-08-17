@@ -19,29 +19,9 @@ class HashTable:
 
         bucket = self.buckets[index]
         
-        # if there's no value in head bucket, insert the kvp
-        # currently breaking because bucket doesn't have a head node
-        # insert sets a head, but I need a way to hit an insert without it overwriting each time I call add(), What conditional would be best here?
+        bucket.insert({'key':key, 'value':value})
         
-        # breakpoint() 
         
-        # if bucket.head:
-        # bucket.append_val({'key':key, 'value':value})
-        if bucket.head == None:
-            # breakpoint() 
-            bucket.append({'key':key, 'value':value})
-        # elif bucket.head != None:
-        #     bucket.append_val({'key':key, 'value':value})
-
-      
-            # bucket.insert({'key':None, 'value':None})
-            # bucket.append_val({'key':key, 'value':value})
-
-
-        # else traverse and insert
-        # elif bucket.head.value:
-        #     bucket.traverse()
-        #     bucket.append_val({'key':key, 'value':value})
 
 
 
@@ -50,16 +30,15 @@ class HashTable:
         index = self.hash(key)
         bucket = self.buckets[index]
 
-        for item in self.buckets:
+        current = bucket.head
 
-            bucket.traverse()
+        while current:
+            key_val_pair = current.value
 
-            key_val_pair = bucket.head.value
-
+            current = current.next
             if key_val_pair['key'] == key:
                 return key_val_pair['value']
-            else:
-                return None
+            
                 
 
     def contains(self, key):

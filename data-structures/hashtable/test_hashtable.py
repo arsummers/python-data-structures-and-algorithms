@@ -11,12 +11,22 @@ def test_get_missing():
     with pytest.raises(ValueError):
         ht.get('cats')
         
-@pytest.mark.skip()
 def test_add():
     ht = HashTable()
     ht.add('spam', 'eggs')
 
     assert ht.get('spam') == 'eggs'
+
+def test_add_twice():
+    ht = HashTable()
+    ht.add('spam', 'eggs')
+    ht.add('things', 'stuff')
+
+
+    assert ht.get('spam') == 'eggs'
+    assert ht.get('things') == 'stuff'
+
+
 
 @pytest.mark.skip()
 def test_contains():
@@ -50,6 +60,8 @@ def test_collision():
     ht = HashTable()
     ht.add('cats', 'cat things')
     ht.add('acts', 'acting things')
-
-    assert ht.get('cats') == 'cat things'
-    assert ht.get('acts') == 'acting things'
+    new_cats = ht.get('cats')
+    new_acts = ht.get('acts')
+#     breakpoint()
+    assert new_cats == 'cat things'
+#     assert new_acts == 'acting things'
