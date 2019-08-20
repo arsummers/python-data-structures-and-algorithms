@@ -31,10 +31,9 @@ class HashTable:
 
         while current:
             key_val_pair = current.value
-
-            current = current.next
             if key_val_pair['key'] == key:
                 return key_val_pair['value']
+            current = current.next
             
         else:
             raise(ValueError)
