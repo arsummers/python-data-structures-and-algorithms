@@ -52,6 +52,20 @@ def tree_2():
 
     return arbor
 
+@pytest.fixture()
+def empty_tree():
+    empty_node = None
+    arbor = BinaryTree()
+    arbor.root = empty_node
+    return arbor
+
+@pytest.fixture()
+def empty_tree2():
+    empty_node = None
+    arbor = BinaryTree()
+    arbor.root = empty_node
+    return arbor
+
 def test_fixture_tree_1(tree_1):
     assert tree_1
 
@@ -61,3 +75,6 @@ def test_fixture_tree_2(tree_2):
 def test_tree(tree_1, tree_2):
     
     assert tree_intersection(tree_1, tree_2) == [11, 2, 10, 6]
+
+def test_none_tree(empty_tree, empty_tree2):
+    assert tree_intersection(empty_tree, empty_tree2) == []
