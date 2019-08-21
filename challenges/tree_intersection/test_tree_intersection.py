@@ -1,9 +1,11 @@
 import pytest
 from tree import BinaryTree, Node
+from tree_intersection import tree_intersection
 
 def test_exists():
     assert BinaryTree
     assert Node
+    assert tree_intersection
 
 @pytest.fixture()
 def tree_1():
@@ -32,13 +34,7 @@ def tree_1():
 def tree_2():
     one =  Node(1)
     two = Node(2)
-    three = Node(3)
-    four = Node(4)
-    five = Node(5)
     six = Node(6)
-    seven = Node(7)
-    eight = Node(8)
-    nine = Node(9)
     ten = Node(10)
     eleven = Node(11)
     twenty = Node(20)
@@ -62,3 +58,6 @@ def test_fixture_tree_1(tree_1):
 def test_fixture_tree_2(tree_2):
     assert tree_2
 
+def test_tree(tree_1, tree_2):
+    
+    assert tree_intersection(tree_1, tree_2) == [11, 2, 10, 6]
