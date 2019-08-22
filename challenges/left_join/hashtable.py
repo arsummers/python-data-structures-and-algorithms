@@ -38,6 +38,22 @@ class HashTable:
         else:
             raise(ValueError)
 
+    def get_key(self, key):
+        index = self.hash(key)
+        bucket = self.buckets[index]
+
+        current = bucket.head
+
+        while current:
+            key_val_pair = current.value
+            if key_val_pair['key'] == key:
+                return key_val_pair['key']
+            current = current.next
+            
+        else:
+            raise(ValueError)
+
+
     def contains(self, key):
         index = self.hash(key)
         bucket = self.buckets[index]
@@ -47,7 +63,8 @@ class HashTable:
             key_val_pair = current.value
             if key_val_pair['key'] == key:
                 return True
-            current = current.next 
+            current = current.next            
+
             
             
 
