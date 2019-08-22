@@ -2,7 +2,7 @@ from linked_list import LinkedList, Node
 
 class HashTable:
     def __init__(self):
-        self.buckets = [LinkedList()] * 1024
+        self.buckets = [LinkedList() for i in range(1024)]
 
     def hash(self, key):
         ascii_sum_for_key = sum([ord(char) for char in key])
@@ -45,12 +45,9 @@ class HashTable:
         
         while current:
             key_val_pair = current.value
-            # current starts coming up Nonetype here when I try testing multiple things
-            current = current.next
-            if key == key_val_pair['key']:
+            if key_val_pair['key'] == key:
                 return True
-            else:
-                return False
+            current = current.next 
             
             
 

@@ -21,10 +21,10 @@ def left_table_synonyms():
 def right_table_antonyms():
     ht = HashTable()
     ht.add('fond', 'averse')
-    ht.add('wrath', 'anger')
+    ht.add('wrath', 'delight')
     ht.add('diligent', 'idle')
-    ht.add('flow', 'jam')
     ht.add('guide', 'follow')
+    ht.add('flow', 'jam')
 
     return ht
 
@@ -36,6 +36,8 @@ def test_synonyms_table_get(left_table_synonyms):
 def test_synonyms_table_contains(left_table_synonyms):
 
     assert left_table_synonyms.contains('wrath')
+    assert left_table_synonyms.contains('guide')
+
 
 def test_antonyms_table_get(right_table_antonyms):
     assert right_table_antonyms.get('fond') == 'averse'
@@ -43,3 +45,8 @@ def test_antonyms_table_get(right_table_antonyms):
 
 def test_antonyms_table_contains(right_table_antonyms):
     assert right_table_antonyms.contains('guide')
+    assert right_table_antonyms.contains('fond')
+
+
+def test_left_join(left_table_synonyms, right_table_antonyms):
+    assert left_join(left_table_synonyms, right_table_antonyms) == ['fond', 'enamored', 'averse', 'wrath', 'anger', 'delight', 'diligent', 'employed', 'idle', 'outfit', 'clothes', None, 'guide', 'usher', 'follow']
