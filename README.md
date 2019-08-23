@@ -56,8 +56,11 @@
    challenge 33 - Tree Intersection
         [link to tree duplicates](./challenges/tree_intersection)
      
-   challenge 33 - Tree Intersection
+   challenge 34 - Left Join Hash Tables
         [link to left join hash table](./challenges/left_join)
+
+   challenge 35 - Graph
+        [link to graph implementation](./data-structures/graph)
 
 # Reverse an Array
 We were given instructions to write a function that will reverse a list or array.
@@ -426,3 +429,24 @@ This runs at O(n) for time (subject to change when I make the first part modular
 
 ## Solution
 ![whiteboarding solution for tree intersection](./assets/left_join.jpg)
+
+
+# Graphs
+A non-linear data structure made up of a collection of vertices, which can hold a value. 
+
+## Challenge
+Implement the basics functions needed to build a graph in python. Work adapted from in-class demo.
+
+## Approach & Efficiency
+Used test-driven development tactics to build the graph method by method. Each method has the ability to communicate with the other methods to build various styles of graph.
+
+## API
+
+`add_vertex` takes in a vertex and a value, and adds it into the graph. The vertices do not need to be attached to each other to be part of the graph.
+
+`get_vertices` returns the list of vertices in the graph. If the graph is empty, it will return None.
+
+`add_edge` creates a link (an edge) between vertices in a graph. It can be self-referential, meaning that a vertex can loop back into itself with an edge.
+
+`get_neighbors` will return a list of vertices that share an edge with the given vertex.
+
