@@ -41,7 +41,7 @@ class Graph:
                     q.appendleft(edge.vertex)
 
         for vertex in to_reset:
-            results.append(to_reset)
+            results.append(vertex.value)
             vertex.visited = False
         return results
 
