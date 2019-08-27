@@ -41,7 +41,7 @@ def test_setup():
     assert d_neighbors[0].vertex.value == 'g'
     assert f_neighbors[0].vertex.value == 'g'
 
-@pytest.mark.skip()
+
 def test_breadth_first():
     graf = Graph()
     a = graf.add_vertex('a')
@@ -63,7 +63,11 @@ def test_breadth_first():
     graf.add_edge(f, g)
     graf.add_edge(d, g)    
 
-    expected = ['a', 'c', 'b', 'e', 'd', 'f', 'g']
-    actual = graf.breadth_first(a)
+    results = []
+    def visit(vertex):
+        results.append(vertex.value)
 
-    assert expected == actual
+    expected = ['a', 'c', 'b', 'd', 'e', 'f', 'g', 'g']
+    graf.breadth_first(a, visit)
+
+    assert expected == results

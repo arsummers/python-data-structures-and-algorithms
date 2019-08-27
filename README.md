@@ -450,3 +450,23 @@ Used test-driven development tactics to build the graph method by method. Each m
 
 `get_neighbors` will return a list of vertices that share an edge with the given vertex.
 
+# Breadth-first Graph Traversal
+Traverse a graph breadth-first and return the results in the order they were visited.
+
+## Challenge
+Perform a breadth-first traversal on a graph. Return the values in the graph in the order they were visited.
+
+## Approach & Efficiency
+Works as a method built into the rest of the functions that comprise a graph.
+
+Utilizes a double-ended queue (a deque from python's collections library), to control the flow of values for each vertex's neighbors. In it's simplest form, the breadth-first traversal starts with a root value in the queue, enqueues its neighbors, processes them as visited, and moves onto the next set of neighbors. It will never process one vertex's neighbors before it has processed the other vertexes at the same "level" as it.
+
+The operate function, which gets fed into the main function, takes place entirely behind the scenes in a test suite. This one's purpose is to append each value to a list, so it can be treated as results. It keeps the pointer on the right vertex at any given time.
+
+Time-complexity: O(nlogn), although I am unsure of it. While there are nested loops, I don't believe it will ever run at O(n^2), since it doesn't have to iterate over everything twice.
+
+Space-complexity: O(n). Nothing should exponentially expand, although it will be more like O(2n)
+
+
+## Solution
+![whiteboarding solution for graph traversal](./assets/breadth_first_graph.jpg)

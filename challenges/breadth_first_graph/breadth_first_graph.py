@@ -23,27 +23,27 @@ class Graph:
         return len(self._vertices)
 
 # ******** TRAVERSALS *********
-    def breadth_first(self, root):
+    def breadth_first(self, root, operate):
         q = deque()
 
         q.appendleft(root)
 
         to_reset = set()
-        results = []
 
         while q:
             current = q.pop()
             current.visited = True
             to_reset.add(current)
+            operate(current)
+
 
             for edge in current.neighbors:
                 if not edge.vertex.visited:
                     q.appendleft(edge.vertex)
 
         for vertex in to_reset:
-            results.append(vertex.value)
             vertex.visited = False
-        return results
+
 
 
 class Edge:
