@@ -44,3 +44,108 @@ def test_graph_setup():
     assert macduff_neighbors[1].vertex.value == 'Perth'
     assert macduff_neighbors[2].vertex.value == 'Banff'
     assert glasgow_neighbors[0].vertex.value == 'MacDuff'
+
+def test_single_flight():
+    g = Graph()
+
+    aberdeen = g.add_vertex('Aberdeen')
+    nairn = g.add_vertex('Nairn')
+    perth = g.add_vertex('Perth')
+    macduff = g.add_vertex('MacDuff')
+    banff = g.add_vertex('Banff')
+    glasgow = g.add_vertex('Glasgow')
+    portree = g.add_vertex('Portree')
+
+    g.add_edge(aberdeen, nairn, 70)
+    g.add_edge(nairn, aberdeen, 70)
+    g.add_edge(aberdeen, perth, 50)
+    g.add_edge(perth, aberdeen, 50)
+    g.add_edge(aberdeen, macduff, 35)
+    g.add_edge(macduff, aberdeen, 35)
+    g.add_edge(perth, macduff, 45)
+    g.add_edge(macduff, perth, 45)
+    g.add_edge(macduff, banff, 15)
+    g.add_edge(banff, macduff, 15)
+    g.add_edge(macduff, glasgow, 40)
+    g.add_edge(glasgow, macduff, 40)
+
+    assert get_edge(g, ['Aberdeen', 'Nairn']) == [True, 70]
+
+
+def test_double_flight():
+    g = Graph()
+
+    aberdeen = g.add_vertex('Aberdeen')
+    nairn = g.add_vertex('Nairn')
+    perth = g.add_vertex('Perth')
+    macduff = g.add_vertex('MacDuff')
+    banff = g.add_vertex('Banff')
+    glasgow = g.add_vertex('Glasgow')
+    portree = g.add_vertex('Portree')
+
+    g.add_edge(aberdeen, nairn, 70)
+    g.add_edge(nairn, aberdeen, 70)
+    g.add_edge(aberdeen, perth, 50)
+    g.add_edge(perth, aberdeen, 50)
+    g.add_edge(aberdeen, macduff, 35)
+    g.add_edge(macduff, aberdeen, 35)
+    g.add_edge(perth, macduff, 45)
+    g.add_edge(macduff, perth, 45)
+    g.add_edge(macduff, banff, 15)
+    g.add_edge(banff, macduff, 15)
+    g.add_edge(macduff, glasgow, 40)
+    g.add_edge(glasgow, macduff, 40)
+
+    assert get_edge(g, ['Aberdeen', 'Macduff', 'Glasgow']) == [True, 75]
+
+def test_for_false():
+    g = Graph()
+
+    aberdeen = g.add_vertex('Aberdeen')
+    nairn = g.add_vertex('Nairn')
+    perth = g.add_vertex('Perth')
+    macduff = g.add_vertex('MacDuff')
+    banff = g.add_vertex('Banff')
+    glasgow = g.add_vertex('Glasgow')
+    portree = g.add_vertex('Portree')
+
+    g.add_edge(aberdeen, nairn, 70)
+    g.add_edge(nairn, aberdeen, 70)
+    g.add_edge(aberdeen, perth, 50)
+    g.add_edge(perth, aberdeen, 50)
+    g.add_edge(aberdeen, macduff, 35)
+    g.add_edge(macduff, aberdeen, 35)
+    g.add_edge(perth, macduff, 45)
+    g.add_edge(macduff, perth, 45)
+    g.add_edge(macduff, banff, 15)
+    g.add_edge(banff, macduff, 15)
+    g.add_edge(macduff, glasgow, 40)
+    g.add_edge(glasgow, macduff, 40)
+
+    assert get_edge(g, ['Perth', 'Nairn']) == [False, 0]
+
+def test_for_false_island():
+    g = Graph()
+
+    aberdeen = g.add_vertex('Aberdeen')
+    nairn = g.add_vertex('Nairn')
+    perth = g.add_vertex('Perth')
+    macduff = g.add_vertex('MacDuff')
+    banff = g.add_vertex('Banff')
+    glasgow = g.add_vertex('Glasgow')
+    portree = g.add_vertex('Portree')
+
+    g.add_edge(aberdeen, nairn, 70)
+    g.add_edge(nairn, aberdeen, 70)
+    g.add_edge(aberdeen, perth, 50)
+    g.add_edge(perth, aberdeen, 50)
+    g.add_edge(aberdeen, macduff, 35)
+    g.add_edge(macduff, aberdeen, 35)
+    g.add_edge(perth, macduff, 45)
+    g.add_edge(macduff, perth, 45)
+    g.add_edge(macduff, banff, 15)
+    g.add_edge(banff, macduff, 15)
+    g.add_edge(macduff, glasgow, 40)
+    g.add_edge(glasgow, macduff, 40)
+
+    assert get_edge(g, ['Glasgow', 'Portree']) == [True, 0]
