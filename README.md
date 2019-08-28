@@ -470,3 +470,26 @@ Space-complexity: O(n). Nothing should exponentially expand, although it will be
 
 ## Solution
 ![whiteboarding solution for graph traversal](./assets/breadth_first_graph.jpg)
+
+
+# Get edges
+Given a business trip itinerary, and an Alaska Airlines route map, is the trip possible with direct flights? If so, how much will the total trip cost be?
+
+## Challenge
+Use a graph to model out the relationships between cities. If you can make the trip by flying directly city to city (can have multiple stops),
+return True, and the price of that trip (determined by how the edges are weighted). If the trip isn't possible, return False and $0
+
+## Approach & Efficiency
+Don't have this one fully working, although I believe I am close. Used aspects of the breadth-first traversal to pull out nodes and values.
+
+Hang ups are mostly typing constraints, where functions are getting returned instead of booleans and numbers.
+
+Main logic for this problem is: if the next city in the queue matches the next item in the list of cities, I can bump up the price, return true and price.
+
+Time-complexity: O(N), at best. Unsure, since this isn't fully working.
+
+Space-complexity: O(1), I think.
+
+
+## Solution
+![whiteboarding solution for get edge](./assets/get_edge.jpg)
