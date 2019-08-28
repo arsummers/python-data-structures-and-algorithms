@@ -2,9 +2,10 @@ from graph import Graph
 from collections import deque
 
 def get_edge(graph, cities):
-
+  
     q = deque()
     price = 0
+
     for city in cities:
         q.appendleft(city)
 
@@ -17,8 +18,9 @@ def get_edge(graph, cities):
             for city in cities:
                 tracker += 1
 
-            # if next city.value in the queue matches the next item in the list of cities, I can bump up the price, return true and price
+            # if next city in the queue matches the next item in the list of cities, I can bump up the price, return true and price
                 if current == cities[tracker]:
+                    price += edge.weight
                     return True, f'${price}'
 
                 elif current != cities[tracker]:
