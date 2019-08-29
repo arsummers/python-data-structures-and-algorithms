@@ -493,3 +493,22 @@ Space-complexity: O(1), I think.
 
 ## Solution
 ![whiteboarding solution for get edge](./assets/get_edge.jpg)
+
+
+
+# Depth first
+Given a starting point, and a list of adjacent values in a graph, do a pre-order depth-first traversal and return the resulting values.
+
+## Challenge
+Create a function that accepts an adjacency list as a graph, and conducts a depth first traversal. Without utilizing any of the built-in methods available to your language, return a collection of nodes in their pre-order depth-first traversal order.
+
+## Approach & Efficiency
+Sought assistance from here: https://www.koderdojo.com/blog/depth-first-search-in-python-recursive-and-non-recursive-programming
+
+In its current state, the solution is close to working, but since I'm having trouble getting it to return a list of values rather than a list of nodes, I can't check that the nodes are being returned in the correct order.
+
+Once working, this time complexity should be O(1+height), where the height is the longest part of the graph. The space complexity should be O(n).
+
+
+## Solution
+![whiteboarding solution for depth first](./assets/depth_first.jpg)
