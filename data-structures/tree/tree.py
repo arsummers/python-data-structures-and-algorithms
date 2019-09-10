@@ -70,8 +70,6 @@ class BinarySearchTree:
 
     def add(self, value):
 
-
-
         if self.root is None:
             self.root = Node(value)
 
