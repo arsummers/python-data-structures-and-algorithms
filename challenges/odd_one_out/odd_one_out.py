@@ -5,4 +5,7 @@ def odd_one_out(arr):
     # loops through dictionary containing counts of all items to check their values. It returns the key of the element with an odd value.
     
     counter = dict((i, arr.count(i)) for i in arr)
-    return counter
+    
+    for num, occurrence in counter.items():
+        if occurrence % 2 != 0:
+            return num
