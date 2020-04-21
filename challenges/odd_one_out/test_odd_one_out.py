@@ -13,3 +13,4 @@ def test_triple():
     expected = 2
     actual = odd_one_out([33, 33, 2, 2, 2, 4, 4, 4, 4, 5, 5, 5, 5])
     assert expected == actual
+
