@@ -45,3 +45,17 @@ def test_sample_three():
     expected = 19
     actual = hourglass_sum(arr)
     assert expected == actual
+
+def test_sample_simple():
+    arr = [
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1],
+        [-1, -1, -1, -1, -1, -1]
+    ]
+
+    expected = -7
+    actual = hourglass_sum(arr)
+    assert expected == actual
