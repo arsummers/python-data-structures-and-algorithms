@@ -1,10 +1,16 @@
 def a_count(s, n):
-    a_num = 0
-    repeated_string = s*100
-    new_string = repeated_string[:n]
-
-    for letter in new_string:
+    all_a_num = 0
+   
+    for letter in s:
         if letter == 'a':
-            a_num += 1
+            all_a_num += 1
+    
+    shortened_n = n//len(s)
 
-    return a_num
+    real_a_count = all_a_num * shortened_n
+    
+    for letter in s[:n%len(s)]:
+        if letter == 'a':
+            real_a_count += 1
+
+    return real_a_count
