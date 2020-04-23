@@ -24,3 +24,10 @@ def test_missing_word():
     expected = 'No'
     actual = check_magazine(magazine, note)
     assert expected == actual
+
+def test_case_mismatch():
+    magazine = ['Speak', 'to', 'me', 'your', 'murder', 'trial']
+    note = ['speak', 'your', 'Murder', 'trial', 'to', 'Me']
+    expected = 'No'
+    actual = check_magazine(magazine, note)
+    assert expected == actual
