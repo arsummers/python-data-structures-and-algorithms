@@ -1,18 +1,17 @@
 # numbers can only move up at most 2 spaces
 # if difference between numbers is >=3, print too chaotic
+# works by comparing indices to values
 
 def minimum_bribe(q):   
     min_bribes = 0
-    loop_range = len(q)-1
-    
-    for i in range(loop_range):
-        if q[i] - q[i+1] == 2:
-            min_bribes += 2
+    q = [j - 1 for j in q]
 
-        elif q[i] - q[i+1] == 1:
-            min_bribes += 1
-
-        elif q[i] - q[i+1] >= 3:
+    for i, j in enumerate(q):
+        if j-i > 2:
             return 'Too chaotic'
-   
+
+        for k in range(max(j-1, 0), i):
+            if q[k] > j:
+                min_bribes += 1
+
     return min_bribes

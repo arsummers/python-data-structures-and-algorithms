@@ -15,4 +15,15 @@ def test_sample_chaotic():
     expected = 'Too chaotic'
     actual = minimum_bribe(q)
     assert expected == actual
-    
+
+def sample_three_a():
+    q = [5, 1, 2, 3, 7, 8, 6, 4]
+    expected = 'Too chaotic'
+    actual = minimum_bribe(q)
+    assert expected == actual
+
+def test_sample_three_b():
+    q = [1, 2, 5, 3, 7, 8, 6, 4]
+    expected = 7
+    actual = minimum_bribe(q)
+    assert expected == actual
