@@ -15,11 +15,9 @@ def check_magazine(magazine, note):
 
     for word in note_dict:
         if word not in mag_dict:
-            print('No not there')
             return 'No'
 
         elif mag_dict[word] < note_dict[word]:
-            print('No not enough')
             return('No')
 
     
