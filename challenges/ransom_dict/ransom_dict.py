@@ -6,23 +6,29 @@
 # if the number of the key/val pair in the note dictionary is less than or equal to the key/val pair in the mag dict, print yes, otherwise print no
 
 magazine = ['ive', 'got', 'a', 'lovely', 'bunch', 'of', 'coconuts']
-note = ['ive', 'got', 'some', 'coconuts']
+note = ['ive', 'got', 'coconuts']
 
+from collections import Counter
 def check_magazine(magazine, note):
-    mag_dict = dict((i, magazine.count(i)) for i in magazine)
-    note_dict = dict((i, note.count(i)) for i in note)
+
+    mag_dict = Counter(magazine)
+    note_dict = Counter(note)
 
 
     for word in note_dict:
         if word not in mag_dict:
+            print('No')            
             return 'No'
 
+
         elif mag_dict[word] < note_dict[word]:
-            return('No')
+            print('No')            
+            return 'No'
 
     
     print('Yes')
     return 'Yes'
-        
+
+
 
 check_magazine(magazine, note)
