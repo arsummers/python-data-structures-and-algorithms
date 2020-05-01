@@ -11,7 +11,14 @@ def test_tiara():
 
     assert expected == actual
 
-def test_multiple_a():
+def test_six_a():
+    phrase = 'aaaaaa'
+    actual = stickers_for(phrase)
+    expected = 3
+
+    assert expected == actual
+
+def test_five_a():
     phrase = 'aaaaa'
     actual = stickers_for(phrase)
     expected = 3
@@ -31,3 +38,18 @@ def test_artisan_martians():
     expected = 2
 
     assert expected == actual
+
+def test_triple_instagram():
+    phrase = 'instagram instagram instagram'
+    actual = stickers_for(phrase)
+    expected = 3
+
+    assert expected == actual
+
+def test_double_instagram():
+    phrase = 'instagram instagram'
+    actual = stickers_for(phrase)
+    expected = 2
+
+    assert expected == actual
+
