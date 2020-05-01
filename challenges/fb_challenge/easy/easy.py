@@ -7,9 +7,7 @@
 # aaaa needs 2
 
 # phrase = 'artisan martians'
-phrase = 'tiara'
-# phrase = 'taming giant gnats'
-# phrase = 'aaaaa'
+
 
 from collections import Counter
 
@@ -59,5 +57,4 @@ def stickers_for(phrase):
 
     print('current:', current)
     stickers += current
- 
-stickers_for(phrase)
+    return stickers
