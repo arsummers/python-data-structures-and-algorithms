@@ -1,5 +1,10 @@
 # anagram!
-# remove each string that is an anagram of an earlier string
+# remove each string that is an anagram of an earlier string, then return an ordered list of the remaining words
+# example:
+# input: ['code', 'doce', 'frame', 'edoc', 'framer']
+# output: 'code', 'frame', 'framer'
+# input = ['poke', 'ekop', 'kope', 'peok']
+# output = 'poke'
 
 text = ['code', 'doce', 'frame', 'edoc', 'framer']
 
