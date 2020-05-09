@@ -4,7 +4,9 @@
 # input: ['code', 'doce', 'frame', 'edoc', 'framer']
 # output: 'code', 'frame', 'framer'
 # input = ['poke', 'ekop', 'kope', 'peok']
-# output = 'poke'
+# output = ['poke']
+
+# start with a brute force algorith, then pair it down from there
 
 text = ['code', 'doce', 'frame', 'edoc', 'framer']
 
@@ -28,5 +30,7 @@ def anagram(text):
 
         
         j += 1
+    
+    return text #will be changed
 
 anagram(text)
