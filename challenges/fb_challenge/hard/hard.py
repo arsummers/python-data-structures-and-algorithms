@@ -6,7 +6,7 @@
 # input = ['poke', 'ekop', 'kope', 'peok']
 # output = ['poke']
 
-# start with a brute force algorith, then pair it down from there
+# start with a brute force algorithm, then pare it down from there
 
 text = ['code', 'doce', 'frame', 'edoc', 'framer']
 
