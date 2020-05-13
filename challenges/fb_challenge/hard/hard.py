@@ -1,5 +1,12 @@
 # anagram!
-# remove each string that is an anagram of an earlier string
+# remove each string that is an anagram of an earlier string, then return an ordered list of the remaining words
+# example:
+# input: ['code', 'doce', 'frame', 'edoc', 'framer']
+# output: 'code', 'frame', 'framer'
+# input = ['poke', 'ekop', 'kope', 'peok']
+# output = ['poke']
+
+# start with a brute force algorithm, then pare it down from there
 
 text = ['code', 'doce', 'frame', 'edoc', 'framer']
 
@@ -23,5 +30,7 @@ def anagram(text):
 
         
         j += 1
+    
+    return text #will be changed
 
 anagram(text)
