@@ -22,3 +22,17 @@ This will still need some work before it's ready to code out.
         repeat check
 
 3. When there are no more anagrams, return the remaining words as an ordered list
+
+# set up some type of current thing on the anagrams with Counter
+
+1. silly feeling way to do it:
+    a. generate a list of each word using Counter
+       check where each match lives in the Counter array
+       take the index of the first time something shows up
+       match that index to the item in the given list
+       remove everything else
+       return
+
+    b. have a current variable
+        set current to Counter
+        
