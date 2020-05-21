@@ -36,3 +36,59 @@ This will still need some work before it's ready to code out.
     b. have a current variable
         set current to Counter
         
+
+Here is some python that didn't work, but I thinkw as close:
+
+```
+text = ['code', 'doce', 'frame', 'edoc', 'framer']
+
+
+def anagram(text):
+    # first step = check is the next item is an anagram, iterate through string in array
+
+    i = 0
+    j = 1
+
+    # first goal = remove everything 'code'
+
+    while j < len(text)-1:
+
+        for letter in text[i]:
+            print('before if', text[i])
+            if letter in text[j] and len(text[i]) == len(text[j]):
+                print('before removal', text[i])
+                text.remove(text[j])
+                anagram(text)
+                print(text[i])
+        
+        j += 1
+    
+    return text #will be changed
+
+anagram(text)
+```
+
+here is more code I've decided to discard:
+```
+ counts_ = []
+
+    for word in text:
+        counts = Counter(word)
+        counts_.append(counts)
+    print(counts_)
+    print(len(counts_[0]))
+    i = 0
+    j = 1
+    while i < len(counts_) and j < len(counts_):
+        # for something
+        # now that I have the counts, I need to check the first one against every one that comes after it. Things to check: that all the letters in one are in the one that comes after, and that they have the same count per letter.
+        
+        if 'a' in counts_[i]:
+            print('a is here')
+
+        if 'a' not in counts_[i]:
+            print['a is not here']
+
+        i += 1
+        j += 1
+```
