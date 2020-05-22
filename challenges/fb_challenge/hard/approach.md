@@ -40,30 +40,31 @@ This will still need some work before it's ready to code out.
 Here is some python that didn't work, but I thinkw as close:
 
 ```
-text = ['code', 'doce', 'frame', 'edoc', 'framer']
-
-
 def anagram(text):
     # first step = check is the next item is an anagram, iterate through string in array
+    # since an iterative solution is obviously being a pain, maybe you should try recursion.
+
+    # def check_letters():
+    #     pass
 
     i = 0
     j = 1
 
-    # first goal = remove everything 'code'
-
     while j < len(text)-1:
 
         for letter in text[i]:
-            print('before if', text[i])
             if letter in text[j] and len(text[i]) == len(text[j]):
-                print('before removal', text[i])
                 text.remove(text[j])
+                print(f'text at j {text[j]}')
                 anagram(text)
                 print(text[i])
+                i += 1
         
         j += 1
     
+    print('***** CORRECT OUTPUT', text)
     return text #will be changed
+
 
 anagram(text)
 ```
