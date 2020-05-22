@@ -15,24 +15,38 @@ def anagram(text):
     # since an iterative solution is obviously being a pain, maybe you should try recursion.
 
     keepers = []
-    i = 0
     
     sorted_words = []
 
+    for word in text:
+        i = 0
 
-    for word in text[i:len(text)]:
         sorted_words.append(sorted(word))
         current = text[i]
+        sort_cur = sorted(current)
 
-        if sorted(current) in sorted_words:
-            text.remove(sorted(current))
+        # take first instance of sorted word, append to keepers, remove all matches from sorted_words
+        print(sort_cur)
 
-            print(sorted(current))
-            print(text)
-        
+        def remove_stuff(sorted_words, sort_cur):
+            return [word_ for word_ in sorted_words if word_ != sort_cur]
+
+        if sort_cur in sorted_words:
+            keepers.append(current)
+            # this is where I take out everything that matches
+            remove_stuff(sorted_words, sort_cur)
+
+            
         i += 1
+        
+        
+        
+        # if sorted(current) in sorted_words[i+1:len(text)]:
+        #     text.remove(sorted(current))
 
-
+        #     print(sorted(current))
+        #     print(text)
+        
 
 
     # i = 0
@@ -50,8 +64,8 @@ def anagram(text):
         
     #     j += 1
     
-    print('***** CORRECT OUTPUT', text)
-    return text #will be changed
+    print('***** CORRECT OUTPUT', keepers)
+    return keepers #will be changed
 
 
 anagram(text)
