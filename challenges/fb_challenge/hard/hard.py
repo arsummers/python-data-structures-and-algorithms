@@ -15,29 +15,32 @@ def anagram(text):
     # since an iterative solution is obviously being a pain, maybe you should try recursion.
 
     keepers = []
-    
     sorted_words = []
+    joiner = ''
 
     for word in text:
         i = 0
 
-        sorted_words.append(sorted(word))
-        current = text[i]
-        sort_cur = sorted(current)
+        sorted_words.append(joiner.join(sorted(word)))
+        # sorted words isn't getting properly created
+        # current = text[i]
+        # sort_cur = sorted(current)
 
-        # take first instance of sorted word, append to keepers, remove all matches from sorted_words
-        print(sort_cur)
+        # removes duplicates from sorted words and returns it as a list. this works well to remove stuff
+        sorted_words = list(dict.fromkeys(sorted_words))
 
-        def remove_stuff(sorted_words, sort_cur):
-            return [word_ for word_ in sorted_words if word_ != sort_cur]
+        # remove_stuff(sorted_words, sort_cur)
 
-        if sort_cur in sorted_words:
-            keepers.append(current)
-            # this is where I take out everything that matches
-            remove_stuff(sorted_words, sort_cur)
+        # if sort_cur in sorted_words:
+        #     print(sorted_words)
+
+        #     keepers.append(current)
+        #     # this is where I take out everything that matches
+        #     remove_stuff(sorted_words, sort_cur)
 
             
         i += 1
+    print(sorted_words)
         
         
         
