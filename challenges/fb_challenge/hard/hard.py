@@ -6,31 +6,25 @@
 # input = ['poke', 'ekop', 'kope', 'peok']
 # output = ['poke']
 
-# start with a brute force algorithm, then pare it down from there
-
-text = ['code', 'doce', 'frame', 'edoc', 'framer']
+# start with a brute force algorithm, then pare it down from there. Here's the text I was using as my main test case. Note that is has multiple items with anagrams, as well as a word that isn't an anagram but is similar to one of the anagrams
+# text = ['code', 'doce', 'frame', 'edoc', 'framer', 'famer']
 
 
 def anagram(text):
-    # first step = check is the next item is an anagram, iterate through string in array
 
-    i = 0
-    j = 1
+    sorted_words = dict()
 
-    # first goal = remove everything 'code'
+    # reverses text list so that when it gets turned into a dictionary it will have the first instance of the anagram. Used list slice rather than the reverse method since reverse returns None.
+    for word in text[::-1]:
+        current = word #just another variable to keep the various instances of 'word' straight
 
-    while j < len(text)-1:
-
-        for letter in text[i]:
-            if letter in text[j] and len(text[i]) == len(text[j]):
-                text.remove(text[j])
-                anagram(text)
-                print(text[i])
+        # takes each word from the text list, essentially 'unanagrams' it, then appends it to the dict of sorted words. The letters are the thing being sorted, not the word order.
+        # removes duplicates from sorted words and returns it as a list
+        sorted_words.update({''.join(sorted(current)) : current})
 
 
-        
-        j += 1
-    
-    return text #will be changed
+    return sorted(list(sorted_words.values()))
 
-anagram(text)
+def anagram_oneliner(text):
+
+    return sorted(list({''.join(sorted(word)) : word for word in text[::-1]}.values()))
