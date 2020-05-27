@@ -19,17 +19,15 @@ def anagram(text):
     joiner = ''
 
     for word in text:
-        i = 0
+        # takes each word from the text list, essentially 'unanagrams' it, then appends it to the list of sorted words. The letters are the thing being sorted, not the word order.
+        current = word #just another variable to keep the various instances of 'word' straight
 
-        sorted_words.append(joiner.join(sorted(word)))
-        # sorted words isn't getting properly created
-        # current = text[i]
-        # sort_cur = sorted(current)
+        sorted_words.append(joiner.join(sorted(current)))
 
-        # removes duplicates from sorted words and returns it as a list. this works well to remove stuff
+        sort_cur = joiner.join(sorted(current))
+        # removes duplicates from sorted words and returns it as a list
+
         sorted_words = list(dict.fromkeys(sorted_words))
-
-        # remove_stuff(sorted_words, sort_cur)
 
         # if sort_cur in sorted_words:
         #     print(sorted_words)
@@ -39,8 +37,8 @@ def anagram(text):
         #     remove_stuff(sorted_words, sort_cur)
 
             
-        i += 1
     print(sorted_words)
+
         
         
         
