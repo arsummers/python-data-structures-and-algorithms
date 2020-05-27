@@ -13,21 +13,22 @@ text = ['code', 'doce', 'frame', 'edoc', 'framer', 'famer']
 def anagram(text):
     # first step = check is the next item is an anagram, iterate through string in array
     # since an iterative solution is obviously being a pain, maybe you should try recursion.
-
+    # reverses text list so that when it gets turned into a dictionary it will have the first instance of the anagram
+    text = text[::-1]
     keepers = []
-    sorted_words = []
+    sorted_words = dict()
     joiner = ''
 
     for word in text:
         # takes each word from the text list, essentially 'unanagrams' it, then appends it to the list of sorted words. The letters are the thing being sorted, not the word order.
         current = word #just another variable to keep the various instances of 'word' straight
 
-        sorted_words.append(joiner.join(sorted(current)))
+        sorted_words.update({joiner.join(sorted(current)) : current})
 
         sort_cur = joiner.join(sorted(current))
         # removes duplicates from sorted words and returns it as a list
 
-        sorted_words = list(dict.fromkeys(sorted_words))
+        # sorted_words = list(dict.fromkeys(sorted_words))
 
         # if sort_cur in sorted_words:
         #     print(sorted_words)
@@ -38,6 +39,8 @@ def anagram(text):
 
             
     print(sorted_words)
+    for key in sorted_words:
+        keepers.append(sorted_words[key])
 
         
         
@@ -65,7 +68,7 @@ def anagram(text):
         
     #     j += 1
     
-    print('***** CORRECT OUTPUT', keepers)
+    print('***** CORRECT OUTPUT', sorted(keepers))
     return keepers #will be changed
 
 
