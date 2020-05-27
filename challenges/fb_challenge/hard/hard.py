@@ -25,5 +25,6 @@ def anagram(text):
 
     return sorted(list(sorted_words.values()))
 
+def anagram_oneliner(text):
 
-# anagram(text)
+    return sorted(list({''.join(sorted(word)) : word for word in text[::-1]}.values()))
