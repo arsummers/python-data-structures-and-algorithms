@@ -21,3 +21,13 @@ def test_harder():
     expected = ['alice', 'duck']
     actual = anagram(text)
     assert expected == actual
+
+def test_base_case():
+    text = ['code', 'doce', 'frame', 'edoc', 'framer', 'famer']
+    expected = ['code', 'frame', 'framer']
+
+def test_single():
+    text = ['python']
+    expected = ['python']
+    actual = anagram(text)
+    assert expected == actual

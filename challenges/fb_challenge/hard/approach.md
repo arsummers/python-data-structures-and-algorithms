@@ -36,60 +36,10 @@ This will still need some work before it's ready to code out.
     b. have a current variable
         set current to Counter
         
-
-Here is some python that didn't work, but I thinkw as close:
-
-```
-def anagram(text):
-    # first step = check is the next item is an anagram, iterate through string in array
-    # since an iterative solution is obviously being a pain, maybe you should try recursion.
-
-    # def check_letters():
-    #     pass
-
-    i = 0
-    j = 1
-
-    while j < len(text)-1:
-
-        for letter in text[i]:
-            if letter in text[j] and len(text[i]) == len(text[j]):
-                text.remove(text[j])
-                print(f'text at j {text[j]}')
-                anagram(text)
-                print(text[i])
-                i += 1
-        
-        j += 1
-    
-    print('***** CORRECT OUTPUT', text)
-    return text #will be changed
-
-
-anagram(text)
-```
-
-here is more code I've decided to discard:
-```
- counts_ = []
-
-    for word in text:
-        counts = Counter(word)
-        counts_.append(counts)
-    print(counts_)
-    print(len(counts_[0]))
-    i = 0
-    j = 1
-    while i < len(counts_) and j < len(counts_):
-        # for something
-        # now that I have the counts, I need to check the first one against every one that comes after it. Things to check: that all the letters in one are in the one that comes after, and that they have the same count per letter.
-        
-        if 'a' in counts_[i]:
-            print('a is here')
-
-        if 'a' not in counts_[i]:
-            print['a is not here']
-
-        i += 1
-        j += 1
-```
+1. The current working approach:
+2. Take in list of words
+3. Set up a variable as an empty list for the items to be returned
+4. Set up a variable that is a dictionary, which will do the bulk of the heavy lifting here
+5. Loop through the list of words in reverse
+6. For each word in the list, sort the letters, and add it to the dictationary as a key-value pair. The key is the sorted version of the word. The value is the word as it appears before any other anagrams show up. Sample dictionary snippet: `{'cdeo':'code'}`. Using a dictionary automatically prevents duplicates. Looping through the original list in reverse means you'll always have the first instance of a word or its anagram, since the dictionary values will get updated multiple times.
+7. Once you have a dictionary with every anagram removed, return a sorted list of the values from the dictionary. 

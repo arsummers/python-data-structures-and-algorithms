@@ -2,6 +2,9 @@
 # sorty = []
 # joiner = ''
 
+# this is a decent way to get a list with no duplicates:
+# sorted_words = list(dict.fromkeys(sorted_words))
+
 
 # # this makes a list of lists which isn't useful for what I'm trying to accomplish
 # for word in text:
