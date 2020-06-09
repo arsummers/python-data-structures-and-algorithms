@@ -7,7 +7,7 @@ def bubble_sort(arr):
 
     return arr
 
-arr = [2, 1]
+arr = [6,4,1]
 def count_swaps(arr):
     swaps = 0 #number of swaps that took place
     n = len(arr)
@@ -20,7 +20,10 @@ def count_swaps(arr):
     first_elem = arr[0]
     last_elem = arr[len(arr)-1]
 
-    print(f'{swaps})
+    print(f'Array is sorted in {swaps} swaps.')
+    print(f'First Element: {first_elem}')
+    print(f'Last Element: {last_elem}')
+
     return swaps, first_elem, last_elem
 
 count_swaps(arr)
