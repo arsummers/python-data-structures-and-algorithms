@@ -26,7 +26,6 @@ def test_bigger_unsorted():
     assert expected == actual
 
 def test_too_poor():
-    def test_bigger_unsorted():
     prices = [12, 111, 200, 1000]
     k = 10
     expected = 0
