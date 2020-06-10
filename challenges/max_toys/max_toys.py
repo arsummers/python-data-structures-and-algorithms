@@ -13,10 +13,10 @@ def max_toys(prices, k):
     #  loop through prices.
     #  if j becomes bigger than k, return the list at the index in which it became bigger
 
-    prices = prices.sort()
+    prices.sort()
 
     j = 0
-    # for i in prices:
-    #     j += i
-
-    return prices
+    for i in prices:
+        j += i
+        if j > k:
+            return prices.index(i)
