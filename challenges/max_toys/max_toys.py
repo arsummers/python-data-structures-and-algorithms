@@ -5,7 +5,7 @@ Given a list of prices and an amount to spend, what is the maximum number of toy
 
 def max_toys(prices, k):
     """
-    prices is an array representing toy prices. k is an integer representing the amount Mark can spend
+    prices is an array representing toy prices. k is an integer representing the amount Mark can spend. Returns the maximum number of toys someone can buy while remaining within budget.
     """
     # sort priced array - python can do this for me
     # a variable to check against k as it decrements
