@@ -31,28 +31,23 @@ from collections import Counter
 def make_anagram(a, b):
     changes = 0
     
-    a = list(a)
-    b = list(b)
+    a = Counter(a)
+    b = Counter(b)
 
-    for i in a:
-        if i not in b:
+    for key in a:
+        if key not in b:
             changes += 1
-            # a.remove(i)
-        if i in b:
-            continue
 
-    for i in b:
-        if i not in a:
-            changes += 1
-            # b.remove(i)
-        if i in a:
-            continue
+        elif key in b and a[key] != b[key]:
+            changes += abs(a[key] - b[key])
+
         
+    for key in b:
+        if key not in a:
+            changes += 1
+
     changes += abs(len(a) - len(b))
 
-    print('a:', a)
-    print('b:', b)
-    print(changes)
     return changes
 
 make_anagram('cde', 'abc')
