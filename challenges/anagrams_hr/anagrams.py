@@ -8,46 +8,43 @@ output = 2, since c and f should be deleted
 
 each time there is a discrepency between either the character itself, or the the number of times it appears, increment counter by the difference.
 
-after a and b are sorted and Countered: # thinking these may not be necessary, may only need sorted
 
-loop through a:
-    if i not in b:
-        remove i
-        counter++
-
-loop through b:
-    if i not in a:
-        remove i
-        counter ++
-
-counter += abs(length(a)-length(b))
+solution ultimately adapted from hackerrank, as my approach, left commented out below, was close, but didn't pick up on everything.
 
 """
 
-from collections import Counter
-
-
-
 def make_anagram(a, b):
     changes = 0
-    
-    a = Counter(a)
-    b = Counter(b)
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
-    for key in a:
-        if key not in b:
-            changes += 1
+    for letter in alphabet:
+        a_ = a.count(letter)
+        b_ = b.count(letter)
 
-        elif key in b and a[key] != b[key]:
-            changes += abs(a[key] - b[key])
-
-        
-    for key in b:
-        if key not in a:
-            changes += 1
-
-    changes += abs(len(a) - len(b))
+        changes += abs(a_ - b_)
 
     return changes
 
-make_anagram('cde', 'abc')
+make_anagram('accfgilmmnrsvwxxyyyz', 'bbdeeghhijjklmmmooppqrrstuvwwx')
+
+
+# failed approach:
+    # a = Counter(a)
+    # b = Counter(b)
+
+    # counter = 0
+    
+    # for key in a:
+
+    #     if key not in b:
+    #         changes += 1
+
+    #     elif key in b:
+    #         if a[key] != b[key]:
+    #             print(f'key: {key}\n a key value: {a[key]}\n b key value:{b[key]}')
+    #             changes += abs(a[key] - b[key])
+
+        
+    # for key in b:
+    #     if key not in a:
+    #         changes += 1
