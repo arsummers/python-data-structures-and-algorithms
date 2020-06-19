@@ -38,3 +38,17 @@ def test_length_mismatch():
     actual = make_anagram(a, b)
     expected = 1
     assert actual == expected
+
+def test_hr_1():
+    a = 'fcrxzwscanmligyxyvym'
+    b = 'jxwtrhvujlmrpdoqbisbwhmgpmeoke'
+    actual = make_anagram(a, b)
+    expected = 30
+    assert actual == expected
+
+def test_hr_2():
+    a = 'showman'
+    b = 'woman'
+    actual = make_anagram(a, b)
+    expected = 2
+    assert actual == expected
