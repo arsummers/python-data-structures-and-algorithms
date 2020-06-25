@@ -7,4 +7,10 @@ For example, given the string s = AABAAB , remove an A at positions 0 and 3 to m
 """
 
 def alterating_chars(s):
-    pass
+    deletions = 0
+
+    for i in range(len(s)-1):
+        if s[i] == s[i+1]:
+            deletions += 1
+
+    return deletions
