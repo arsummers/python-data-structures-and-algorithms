@@ -41,6 +41,6 @@ def sherlock(s):
             tally += abs(s_counts[key] - base)
         
         if tally > 1:
-            return 'NO'
+            return s_counts
 
     return 'YES'
