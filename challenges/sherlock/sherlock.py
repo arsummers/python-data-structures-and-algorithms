@@ -15,7 +15,7 @@ input: 'aabbcd'
 output: 'NO'
 
 Algo:
-Call Counter on the string, giving the number of times each character exists
+Call Counter on the string, giving the number of times each character exists. Counter values get turned into a list for easier access.
 
 loop through string/Counter
 
@@ -29,18 +29,26 @@ if the counter variable becomes > 1, return 'NO', else return 'YES'
 from collections import Counter
 
 def sherlock(s):
-    s_counts = Counter(s)
+    s_counts = list(Counter(s).values())
 
-    base_setup = next(iter(s_counts.values()))
-    base = base_setup
+    base = s_counts[0]
 
     tally = 0
 
-    for key in s_counts:
-        if s_counts[key] != base:
-            tally += abs(s_counts[key] - base)
+    last_index = len(s_counts) - 1
+
+    for num in s_counts:
+        if num != base:
+            tally += abs(base - num)
         
+        if s_counts[last_index] == 1 and s_counts[last_index-1] > 2:
+            return 'YES'
+
         if tally > 1:
-            return s_counts
+            return 'NO'
 
     return 'YES'
+
+"""
+ok, in edge case it fails because only one letter is causing trouble, although the rest of them appear much more often. Since Counter orders things by how often they occur, I really only need an extra check on the last thing.
+"""
