@@ -51,4 +51,7 @@ def sherlock(s):
 
 """
 ok, in edge case it fails because only one letter is causing trouble, although the rest of them appear much more often. Since Counter orders things by how often they occur, I really only need an extra check on the last thing.
+
+
+I wonder if I could make it oneliner?
 """
