@@ -22,25 +22,51 @@ special substrings = {m, n, o, n, o, p, o, o, non, ono, opo, oo}
             - append the whole thing
     - if s is 1:
         - just append the letter
+
+Code to get all substrings from Geeks4Geeks: https://www.geeksforgeeks.org/python-get-all-substrings-of-given-string/
+
+Breakdown of that list comprehension:
+    for i in range(len(s)):
+        for j in range(i+1, len(s)+1):
+            subs.append(s[i:j])
 """
 
 def special_string(s):
-    substrings = [letter for letter in s]
 
-    if len(s) == 1:
-        return len(s)
-    if len(s) == 2:
-        if s[0] == s[1]:
-            substrings.append(s)
-        return len(substrings)
+    substrings = [s[i:j] for i in range(len(s)) for j in range(i+1, len(s)+1)]
+
+    counter = 0
 
 
-    for i in range(len(s)-2):
-        if s[i] == s[i+2]:
-            sub_str = s[i] + s[i+1] + s[1+2]
-            substrings.append(''.join(sub_str))
-        if s[i] == s[i+1] and s[i+1] is not None:
-            pass
+    for elem in substrings:
+        if elem == elem[::-1]:
+            print(elem)
+            counter += 1
+
+
+
+    # if len(s) == 2:
+    #     if s[0] == s[1]:
+    #         substrings.append(s)
+    #     return len(substrings)
+
+
+    # for i in range(len(s)-2):
+    #     if s[i] == s[i+2]:
+    #         sub_str = s[i] + s[i+1] + s[1+2]
+    #         substrings.append(''.join(sub_str))
+    #     if s[i] == s[i+1]:
+    #         sub_str = s[i] + s[i+1]
+    #         substrings.append(''.join(sub_str))
+
 
     print(substrings)
-    return len(substrings)
+    return counter
+
+
+"""
+another idea for a code challenge:
+determine how many characters you need to delete from two strings in order for them to match
+at, cat = 2
+thought, slough = 6 (unless it was sloughs)
+"""
