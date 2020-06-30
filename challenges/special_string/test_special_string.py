@@ -33,3 +33,9 @@ def test_edge_short2():
     expected = 2
     actual = special_string(s)
     assert expected == actual
+
+def test_shortboy():
+    s = 'a'
+    expected = 1
+    actual = special_string(s)
+    assert expected == actual
