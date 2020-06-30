@@ -25,20 +25,22 @@ special substrings = {m, n, o, n, o, p, o, o, non, ono, opo, oo}
 """
 
 def special_string(s):
-    substrings = []
-
-    current = s[0]
+    substrings = [letter for letter in s]
 
     if len(s) == 1:
         return len(s)
     if len(s) == 2:
-        substrings.append(s[0])
-        substrings.append(s[1])
         if s[0] == s[1]:
             substrings.append(s)
         return len(substrings)
 
-    for letter in range(len(s)-2):
-        substrings.append(letter)
 
-    return num_strings
+    for i in range(len(s)-2):
+        if s[i] == s[i+2]:
+            sub_str = s[i] + s[i+1] + s[1+2]
+            substrings.append(''.join(sub_str))
+        if s[i] == s[i+1] and s[i+1] is not None:
+            pass
+
+    print(substrings)
+    return len(substrings)

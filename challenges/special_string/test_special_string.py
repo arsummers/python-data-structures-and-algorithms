@@ -39,3 +39,15 @@ def test_shortboy():
     expected = 1
     actual = special_string(s)
     assert expected == actual
+
+def test_edgy():
+    s = 'aaaaab'
+    expected = 15
+    actual = special_string(s)
+    assert expected == actual
+
+def test_another():
+    s = 'aadaa'
+    expected = 9
+    actual = special_string(s)
+    assert expected == actual
