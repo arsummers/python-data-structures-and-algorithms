@@ -37,11 +37,36 @@ def special_string(s):
 
     counter = 0
 
+    if s == s[::-1]:
+        substrings.append(s)
+        counter += 1
+        print(f'palindrome s: {s}')
+
 
     for elem in substrings:
-        if elem == elem[::-1]:
-            print(elem)
-            counter += 1
+        # captures first half of odd string, not inclusive of actual middle
+        # odd_mid = elem[:len(elem)//2:]
+
+        # if len(elem) == 1 or len(elem) % 2 == 0 and elem == elem[::-1]:
+        #     print(elem)
+        #     counter += 1
+            
+        # elif elem == elem[::-1]:
+        #     for i in range(1, len(odd_mid)):
+        #         if s[i] == s[0]:
+        #             counter += 1
+
+        if elem == elem[::-1] and elem != s:
+            if len(elem) == 1 or len(elem) % 2 == 0 or len(elem) == 3:
+                counter += 1
+                print(f'evens: {elem}')
+            elif len(elem) >= 5 or len(elem) % 2 != 0:
+                for letter in range(1, len(elem[:len(elem)//2:])):
+                    if elem[letter] == s[0]:
+                        counter += 1
+                        print(f'odds: {elem}')
+                        print(f'odds letters: {elem[letter]}')
+
 
 
 

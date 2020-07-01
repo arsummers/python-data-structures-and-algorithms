@@ -42,7 +42,7 @@ def test_shortboy():
 
 def test_edgy():
     s = 'aaaaab'
-    expected = 15
+    expected = 16
     actual = special_string(s)
     assert expected == actual
 
