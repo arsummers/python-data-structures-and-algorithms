@@ -29,6 +29,8 @@ Breakdown of that list comprehension:
     for i in range(len(s)):
         for j in range(i+1, len(s)+1):
             subs.append(s[i:j])
+
+too slow for hackerrank D: D:
 """
 
 def special_string(s):
@@ -44,17 +46,7 @@ def special_string(s):
 
 
     for elem in substrings:
-        # captures first half of odd string, not inclusive of actual middle
-        # odd_mid = elem[:len(elem)//2:]
 
-        # if len(elem) == 1 or len(elem) % 2 == 0 and elem == elem[::-1]:
-        #     print(elem)
-        #     counter += 1
-            
-        # elif elem == elem[::-1]:
-        #     for i in range(1, len(odd_mid)):
-        #         if s[i] == s[0]:
-        #             counter += 1
 
         if elem == elem[::-1] and elem != s:
             if len(elem) == 1 or len(elem) % 2 == 0 or len(elem) == 3:
@@ -66,24 +58,6 @@ def special_string(s):
                         counter += 1
                         print(f'odds: {elem}')
                         print(f'odds letters: {elem[letter]}')
-
-
-
-
-    # if len(s) == 2:
-    #     if s[0] == s[1]:
-    #         substrings.append(s)
-    #     return len(substrings)
-
-
-    # for i in range(len(s)-2):
-    #     if s[i] == s[i+2]:
-    #         sub_str = s[i] + s[i+1] + s[1+2]
-    #         substrings.append(''.join(sub_str))
-    #     if s[i] == s[i+1]:
-    #         sub_str = s[i] + s[i+1]
-    #         substrings.append(''.join(sub_str))
-
 
     print(substrings)
     return counter
