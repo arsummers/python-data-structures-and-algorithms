@@ -61,7 +61,7 @@ def special_string(s):
 
     print(substrings)
     return counter
-
+    
 
 """
 another idea for a code challenge:
