@@ -30,26 +30,39 @@ loop through s1 --> in a range:
 
 """
 
+
 def common_child(s1, s2):
-    child_str = ''
-    temp_1 = ''
-    temp_2 = ''
+    child = []
+    i = 0
+    temp_1 = s1[i:len(s1)]
+    temp_2 = s2[i:len(s2)]
 
-    for i in range(0, len(s1)):
+    def helper():        
+        if s1[i] == s2[i]:
+                child_str += s1[i]
+                print(f'child str here{child_str}')
+                i += 1
         if s1[i] != s2[i]:
-            print(f'REASSIGNMENT {s1}, {s2}')
-            s1 = s1[i:len(s1)]
-            s2 = s2[i:len(s2)]
-        elif s1[i] == s2[i]:
-            child_str += s1[i]
-            continue
+                print(f'REASSIGNMENT {s1}, {s2}')
+                s1, temp_1 = temp_1, s1
+                s2, temp_2 = temp_2, s2
+                i += 1
+                helper()
+    helper()
+    temp_1 = [i for i in s1 if i in s2]
+    temp_2 = [i for i in s2 if i in s1]
+
+    if temp_1 == temp_2:
+        child = temp_1
+     
         
-    print(f'child str {child_str}')
-    return len(child_str)
+
+    print(f'temps: {temp_1}, {temp_2}')
+    print(f'child str {child}')
 
 
-
-
+    return len(child)
+           
 
 
 
