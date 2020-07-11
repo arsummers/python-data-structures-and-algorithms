@@ -31,9 +31,11 @@ from itertools import combinations
 
 def gramlock(s):
     substrings = [s[x:y] for x, y in combinations(range(len(s)+1), r=2)]
-    child = Counter(substrings)
+    sorted_substrings = [''.join(sorted(string)) for string in substrings]#returns a list of sorted versions of the strings, working from a generated matrix
+    child = Counter(sorted_substrings)
     anagram_count = 0
-    for i in child:
-        if child[i] % 2 == 0:
-            anagram_count += child[i]
-    return anagram_count
+
+    # if all characters are the same, I'll need the sum of their instances
+    # 
+    
+    return child
