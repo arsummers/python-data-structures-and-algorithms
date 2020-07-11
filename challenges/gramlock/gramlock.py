@@ -35,7 +35,13 @@ def gramlock(s):
     child = Counter(sorted_substrings)
     anagram_count = 0
 
+    for i in child:
+        if child[i] > 1:
+            if child[i] // 2 >= 1:
+                anagram_count += (child[i] // 2)
+
+
     # if all characters are the same, I'll need the sum of their instances
     # 
     
-    return child
+    return anagram_count
