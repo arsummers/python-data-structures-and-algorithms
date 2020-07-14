@@ -38,3 +38,4 @@ def gramlock(s):
         anagram_count += child[i]*(child[i]-1)//2
 
     return anagram_count
+
