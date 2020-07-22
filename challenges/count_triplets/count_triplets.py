@@ -11,9 +11,20 @@ r = 4
 triplets = [1, 4, 16] and [4, 16, 24]
 
 return the number of triplets
+
 """
+from collections import Counter
 
 def count_triplets(arr, r):
+    arr_count = Counter(arr)
+    holder = Counter()
     triplets_count = 0
     
+    for i in arr:
+        j = i // r
+        k = i * r
+        arr_count[i] -= 1
+        if holder[j] and arr_count[k] and not i%r:
+            triplets_count += holder[j]*arr_count[k]
+        holder[i] += 1
     return triplets_count
