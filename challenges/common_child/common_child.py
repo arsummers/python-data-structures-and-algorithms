@@ -31,37 +31,46 @@ loop through s1 --> in a range:
 """
 
 
-def common_child(s1, s2):
-    child = []
-    i = 0
-    temp_1 = s1[i:len(s1)]
-    temp_2 = s2[i:len(s2)]
+def commonChild(s1, s2):
+    s1_len = len(s1)
+    s2_len = len(s2)
+    temp_arr = [[None]*(s2_len+1) for i in range(s1_len + 1)]
 
-    def helper():        
-        if s1[i] == s2[i]:
-                child_str += s1[i]
-                print(f'child str here{child_str}')
-                i += 1
-        if s1[i] != s2[i]:
-                print(f'REASSIGNMENT {s1}, {s2}')
-                s1, temp_1 = temp_1, s1
-                s2, temp_2 = temp_2, s2
-                i += 1
-                helper()
-    helper()
-    temp_1 = [i for i in s1 if i in s2]
-    temp_2 = [i for i in s2 if i in s1]
+    for i in range(s1_len + 1):
+        for j in range(s2_len + 1):
+            if i == 0 or j == 0:
+                temp_arr[i][j] = 0
+            elif s1[i-1] == s2[j-1]:
+                temp_arr[i][j] = temp_arr[i-1][j-1]+1
+            else:
+                temp_arr[i][j] = max(temp_arr[i-1][j], temp_arr[i][j-1])
+    return temp_arr[s1_len][s2_len]
 
-    if temp_1 == temp_2:
-        child = temp_1
-     
-        
-
-    print(f'temps: {temp_1}, {temp_2}')
-    print(f'child str {child}')
+    
+    
 
 
-    return len(child)
+
+    # m = len(X) 
+    # n = len(Y) 
+  
+    # # declaring the array for storing the dp values 
+    # L = [[None]*(n + 1) for i in range(m + 1)] 
+  
+    # """Following steps build L[m + 1][n + 1] in bottom up fashion 
+    # Note: L[i][j] contains length of LCS of X[0..i-1] 
+    # and Y[0..j-1]"""
+    # for i in range(m + 1): 
+    #     for j in range(n + 1): 
+    #         if i == 0 or j == 0 : 
+    #             L[i][j] = 0
+    #         elif X[i-1] == Y[j-1]: 
+    #             L[i][j] = L[i-1][j-1]+1
+    #         else: 
+    #             L[i][j] = max(L[i-1][j], L[i][j-1]) 
+  
+    # # L[m][n] contains the length of LCS of X[0..n-1] & Y[0..m-1] 
+    # return L[m][n] 
            
 
 
