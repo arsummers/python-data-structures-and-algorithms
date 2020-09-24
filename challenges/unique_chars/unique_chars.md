@@ -76,4 +76,8 @@ def unique_chars(string):
     ```
     to top of function
 
+## Big O stuff
+I think it'd still be O(n), but not a nice O(n) for both time and space. Shouldn't be O(n)^2.
 
+max() is O(n)
+Counter() and list() will both be O(n) as well
