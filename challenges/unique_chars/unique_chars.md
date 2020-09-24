@@ -13,7 +13,7 @@ Output: `False`
 Input: `I love cats`
 Output: `True`
 
-Input: `Donald the duck`
+Input: `Donal the duck`
 Output: `False`
 
 Input: `I am dog. Query.`
@@ -47,6 +47,33 @@ list(Counter(string) values)
 return False is list[0] > 1, else return True
 
 
-
-
 ## Code
+```
+from collections import Counter
+
+def unique_chars(string):
+    normalized = ''.join(string.lower())
+    count_vals = list(Counter(normalized).values())
+
+    if count_vals[0] > 1:
+        return False
+
+    else:
+        return True
+
+```
+
+## What I needed to change to make the code run
+- last two cases, both my edge cases, failed.
+- First edge case shows up as True, when it should be False. Something is causing the periods to not register.
+- had to change normalized_chars to `normalized = ''.join(string.lower().split())` to remove spaces.
+- turning the values into a list gets rid of the sorting that Counter did for some reason. Instead of accessing the first index in the list, I had to find the max number in the list
+
+- List index is out of range on empty string edge case
+    - fixed by adding:
+    ```if len(string) == 0:
+            return True
+    ```
+    to top of function
+
+
