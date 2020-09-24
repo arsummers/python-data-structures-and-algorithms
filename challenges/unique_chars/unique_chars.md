@@ -35,9 +35,18 @@ I'm going to be working with special characters for fun, and because I'm not on 
     - convert all characters in string to lowercase, so that capital letters won't cause problems on purpose
 - Remove all spaces
 - Call Counter, from Python's collections library, on the resulting string. This will net me a dictionary that contains the number of times each letter shows up.
-- Since Counter sorts by descending order of the number of occurrences, you can return True if the first value is less than or equal to 1, and False if the first value is greater than 1.
+- Since Counter sorts by descending order of the number of occurrences, you can return True if the first value is less than or equal to 1, and False if the first value is greater than 1. The values will have to be converted into a list to access the first one, since dictionary values aren't indexable in python3
 
 
 ## Pseudocode
+import Counter
+join all characters in string with an empty ''
+call lowercase on new string
+Counter(the string)
+list(Counter(string) values)
+return False is list[0] > 1, else return True
+
+
+
 
 ## Code
