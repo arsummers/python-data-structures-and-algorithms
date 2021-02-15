@@ -14,3 +14,14 @@ def unique_chars(string):
 
     else:
         return True
+
+
+# trying again for fun. 
+def unique_chars_return(string):
+    normalized = ''.join(string.lower().split())
+    the_set = set((normalized))
+
+    if len(the_set) == len(normalized):
+        return True
+
+    return False
