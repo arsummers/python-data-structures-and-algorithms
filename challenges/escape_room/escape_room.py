@@ -54,8 +54,7 @@ def escape_room(word_list, keypads):
         return joined_table
 
     # pseudo_left_join('APLE', 'AELSXYZ')
-
-
+    result = map(pseudo_left_join, joined_table)
 
     def count_possibilities(joined_table):
   
@@ -87,5 +86,5 @@ def escape_room(word_list, keypads):
         
     # return num_words
     # return joined_table
-    return pseudo_left_join(word_set, keypads)
+    return list(result)
     # return word_set
