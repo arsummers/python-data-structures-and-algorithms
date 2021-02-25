@@ -26,3 +26,15 @@ def reverse_in_place(arr):
 #     #arr[6 - 1 - 0] which is arr[5]
 #     arr[length - 1 - i] = 6
 # steps 2 onward will continue swapping down to the middle. This will work with both even and odd sized lists.
+
+
+def weird_fizzbuzz(n):
+    result = ''
+    
+    if n % 3 == 0:
+        result += 'Fizz'
+
+    if n % 5 == 0:
+        result += 'Buzz'
+
+    return result
